@@ -1,26 +1,65 @@
 extends SceneTree
-## Smoke test: memuat semua scene, resource, dan skrip proyek lalu memeriksa teks id/en.
+## Smoke test: memuat semua scene, resource, dan skrip proyek, membuat instance tiap scene,
+## lalu memeriksa teks id/en. Kode keluar 1 jika ada resource/skrip yang gagal dimuat
+## ATAU Godot mencatat error (ERROR / SCRIPT ERROR) selama pemeriksaan.
 ## Jalankan dari folder proyek:
 ##   godot --headless --path . --script tools/smoke_test.gd
-## Kode keluar 1 jika ada resource yang gagal dimuat.
 
 
 const EXTENSIONS := [".tscn", ".tres", ".gd"]
 const SKIP_DIRS := [".godot", ".git", "tools"]
+## Scene yang butuh node induk khusus sehingga tidak ikut di-instantiate sendirian.
+const SKIP_INSTANTIATE := ["res://main.tscn", "res://world.tscn"]
+
+
+## Penghitung error dari log Godot (Logger tersedia sejak Godot 4.5).
+class ErrorCounter extends Logger:
+	var count := 0
+	var messages:PackedStringArray = []
+
+	func _log_error(function:String, file:String, line:int, code:String, rationale:String, editor_notify:bool, error_type:int, script_backtraces:Array[ScriptBacktrace]) -> void:
+		# Peringatan (WARNING) tidak dihitung; hanya ERROR dan SCRIPT ERROR.
+		if error_type == ERROR_TYPE_WARNING:
+			return
+		count += 1
+		messages.append("%s:%d %s %s" % [file, line, code, rationale])
+
 
 var errors := 0
+var counter := ErrorCounter.new()
 
 
 func _initialize() -> void:
+	OS.add_logger(counter)
 	var count := 0
 	for path in collect("res://"):
 		count += 1
-		if ResourceLoader.load(path) == null:
-			printerr("GAGAL memuat: ", path)
-			errors += 1
-	print("smoke_test: %d file dimuat, %d gagal" % [count, errors])
+		check_file(path)
+	print("smoke_test: %d file diperiksa, %d gagal" % [count, errors])
 	check_translations()
+	OS.remove_logger(counter)
+	for message in counter.messages:
+		printerr("LOG ERROR: ", message)
+	errors += counter.count
+	print("smoke_test: %d error total (termasuk log Godot)" % errors)
 	quit(1 if errors else 0)
+
+
+func check_file(path:String) -> void:
+	var resource := ResourceLoader.load(path)
+	if resource == null:
+		printerr("GAGAL memuat: ", path)
+		errors += 1
+		return
+	# Skrip yang salah sintaks/tipe: load() mengembalikan null dan Logger menghitung ERROR-nya.
+	# (reload() tidak dipakai: ditolak untuk skrip autoload yang sudah punya instance.)
+	if resource is PackedScene and path not in SKIP_INSTANTIATE:
+		var node = resource.instantiate()
+		if node == null:
+			printerr("GAGAL instantiate: ", path)
+			errors += 1
+		else:
+			node.free()
 
 
 func collect(dir_path:String) -> PackedStringArray:
