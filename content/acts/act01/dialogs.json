@@ -81,7 +81,12 @@
 			{
 				"speaker": "dokter_zahra",
 				"text": "DLG_ZAHRA_SAYUR",
-				"emote": "smile",
+				"emote": "smile"
+			},
+			{
+				"speaker": "arka",
+				"text": "DLG_ZAHRA_TERIMA_KASIH",
+				"emote": "love",
 				"end": true
 			}
 		]

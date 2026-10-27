@@ -176,3 +176,16 @@ kesulitan perlu dicoba langsung oleh pengguna.
   `assets/SOURCES.md`. `docs/act01_desain.md` tidak menyebut tampilan tokoh sehingga tidak berubah.
 - Screenshot sprite: `docs/fase2_screenshots/16_sprite_tokoh.png` (semua tokoh, 4 arah, semua baris animasi, plus faceset).
   Seluruh screenshot dalam game diambil ulang setelah perubahan ini.
+
+## Pembaruan: panggilan "Ayah" dan "Mamah" (keputusan pengguna)
+
+- Arka, Bida, Nadiya, Farah memanggil **Pak Hilmi "Ayah"** dan **Dokter Zahra "Mamah"** (ID). Versi **EN sementara "Dad" / "Mom"**
+  (mudah diganti: hanya di `content/acts/act01/act01_dialogs.en.json`, kunci `CH_HILMI_*`, `DLG_HILMI_ARKA_*`, `DLG_ZAHRA_ARKA_RAMEN`,
+  `DLG_ZAHRA_TERIMA_KASIH`). Warga lain dan narasi tetap "Hokage Pak Hilmi" / "Dokter Zahra"; **nama pembicara tidak berubah**
+  (`translations/characters.*.json`), hanya kata sapaan dalam kalimat.
+- Dialog uji yang diubah: pilihan dan jawaban Arka di `hilmi_sapa` ("Ayah, di depan ada ayam!", "Ayah, ada ramen gratis?"),
+  `zahra_sembuhkan` ("Siap, Mamah!" dan baris baru "Terima kasih, Mamah!"). Pak Hilmi tidak lagi menyebut dirinya "Bapak"
+  (kalimatnya dibuat netral) supaya tidak memutuskan hubungan keluarga yang belum ditentukan.
+- `docs/story_bible.md` 3.2: catatan panggilan + tiga opsi hubungan ditandai **[USULAN]** (anak kandung / anak asuh / murid yang
+  dianggap anak), tidak diputuskan; keselarasan dengan tema Arka dan hubungan Pak Hilmi-Kuro dicatat. `docs/act01_desain.md`:
+  baris Arka di S2 dan S6 ditambahkan, serta catatan panggilan di bagian 12.3.

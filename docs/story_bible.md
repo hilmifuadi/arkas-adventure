@@ -67,6 +67,15 @@ Keputusan tampilan (pengguna): **Bida, Nadiya, dan Farah berhijab atau bertudung
 | **Dokter Zahra** | Membantu memimpin Desa Daun, dokter desa; **berhijab** biru muda yang lembut dengan jas putih berlambang palang | Keibuan dan lembut, takut serangga | **Menyembuhkan rombongan setiap kali mereka datang ke rumah Hokage dan berinteraksi dengannya** |
 | **Kuro** | Antagonis: dulu murid berbakat yang ikut membangun Mesin; proyek dihentikan setelah kecelakaan, ia merasa dikhianati | Tetap manusiawi (lihat usulan di 3.3) | Berubah dari lawan menjadi sekutu yang memperbaiki desa |
 
+**Panggilan keluarga (keputusan pengguna):** Arka, Bida, Nadiya, dan Farah memanggil Pak Hilmi **"Ayah"** dan Dokter Zahra **"Mamah"** dalam percakapan sehari-hari (EN sementara: "Dad" / "Mom"; bisa diganti). Warga lain, narasi, dan nama pembicara di dialog tetap "Hokage Pak Hilmi" dan "Dokter Zahra"; nama baku di brief tidak berubah.
+
+**[USULAN] Hubungan keluarganya belum ditentukan pengguna.** Opsi (jangan dianggap keputusan):
+- **A. Anak kandung** Pak Hilmi dan Dokter Zahra (Arka) dan anak-anak lain dianggap saudara/sahabat keluarga. Tema Arka ("Hokage itu terkenal dan dapat ramen gratis" → melayani warga) menjadi juga soal melanjutkan jejak ayahnya.
+- **B. Anak asuh** keluarga Hokage: keempatnya dibesarkan di rumah Hokage. Cocok dengan tim yang saling menjaga dan dengan rumah Hokage sebagai tempat pulang/pemulihan.
+- **C. Murid yang dianggap anak:** panggilan "Ayah/Mamah" tumbuh dari kedekatan murid-guru. Paling mudah selaras dengan masa lalu Pak Hilmi sebagai guru di akademi.
+
+Catatan keselarasan: (1) Hubungan Pak Hilmi dengan **Kuro** tetap sebagai **murid di akademi**; pada opsi A/B, Kuro bisa dipandang "murid yang tidak pernah dipanggil anak" sehingga rasa dikhianatinya makin dimengerti, tanpa mengubah motivasi yang sudah dikunci di 4.1. (2) Tema Arka tidak bertabrakan: ketenaran dan ramen gratis tetap motivasi awal; "Ayah" yang melayani warga menjadi teladan yang pelan-pelan ia pahami. (3) Dokter Zahra tetap "istri Hokage" seperti di tabel nama baku.
+
 ### 3.3 [USULAN] Kuro yang manusiawi
 Supaya Kuro tidak jadi penjahat satu dimensi:
 - Ia merawat **kebun kecil dan kucing liar** di markasnya (menjelaskan banyaknya kucing di Act 7; **Kucing Petir** adalah kucing yang ia beri makan, membesar karena energi curian).

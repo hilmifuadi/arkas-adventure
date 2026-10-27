@@ -61,6 +61,7 @@ Desa Daun di pagi cerah (musik hangat), dibagi menjadi **6 ruang layar** (sistem
 | Pembicara | ID | EN |
 |---|---|---|
 | Pak Hilmi | Kumpulkan tiga gulungan latihan. Kerja sama itu penting, Arka. | Collect three training scrolls. Teamwork matters, Arka. |
+| Arka | Siap, Ayah! Kami akan bekerja sama. | Yes, Dad! We'll work together. |
 | Nadiya | Target terkunci. Jangan ada yang lewat di garis tembakku! | Target locked. Nobody cross my line of fire! |
 | Nadiya | ...Itu cuma papan petunjuk? | ...That was just a signboard? |
 | Farah | Secara teori, alat pelacak ini aman! | In theory, this tracker is safe! |
@@ -91,6 +92,7 @@ Desa Daun di pagi cerah (musik hangat), dibagi menjadi **6 ruang layar** (sistem
 | Pembicara | ID | EN |
 |---|---|---|
 | Pak Hilmi | Selamat! Kalian lulus! Minggu depan Festival Seribu Shuriken! | Congratulations! You passed! Next week is the Festival of a Thousand Shuriken! |
+| Arka | Terima kasih, Ayah! Aku lulus! | Thank you, Dad! I passed! |
 | Ibu Sari | HOKAGEEE! Ramenku jadi... bubur ungu! | HOKAGEEE! My ramen turned into... purple porridge! |
 | Farah | Detektorku bilang semua orang ancaman. Termasuk aku. | My detector says everyone is a threat. Including me. |
 | Bida | Ada jejak lendir menuju saluran air. Ini bukan kejadian satu kali. | A slime trail leads to the drain. This isn't a one-time thing. |
@@ -151,7 +153,8 @@ Setelah menemukan jeruji, Ibu Sari datang membawa kabar: **sumur desa mengeluark
 ### 12.3 Pengaturan teknis
 - Musik: R1-R3 `33 - Calm Village` / `31 - Sunny`; pengejaran `35 - Adventure`; boss ringan `34 - Fight` (volume rendah); gudang `28 - Tension` (ringan) lalu kembali tenang.
 - Cuaca/lingkungan: cerah, daun berguguran ringan di R5.
-- Dokter Zahra di R2 menyembuhkan seluruh tim setiap diajak bicara (sesuai brief).
+- Dokter Zahra di R2 menyembuhkan seluruh tim setiap diajak bicara (sesuai brief). Keempat tokoh utama menyapanya "Mamah" (EN sementara: "Mom"), mis. Arka: "Terima kasih, Mamah!"
+- **Panggilan:** Arka, Bida, Nadiya, Farah memanggil Pak Hilmi "Ayah" dan Dokter Zahra "Mamah" (EN sementara "Dad"/"Mom"). Warga lain dan narasi tetap "Hokage Pak Hilmi" dan "Dokter Zahra"; nama pembicara di kotak dialog tidak berubah.
 - Mode Santai: ayam lebih lambat, boss 2 pukulan.
 - **Tutorial bertahap:** gerak (R1) → interaksi dan dialog (R3) → serang (pos 2) → bidik Nadiya (target) → perintah partner (pengejaran) → dash (celah pasar) → boss.
 
