@@ -91,7 +91,12 @@
 			{
 				"speaker": "pak_hilmi",
 				"text": "DLG_HILMI_SAPA",
-				"emote": "smile"
+				"emote": "smile",
+				"effects": [
+					{
+						"objective": "OBJ_TRAIN"
+					}
+				]
 			},
 			{
 				"id": "tanya",

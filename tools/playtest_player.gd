@@ -38,6 +38,7 @@ var GameState:Node
 func _initialize() -> void:
 	GameState = root.get_node("GameState")
 	GameState.reset()
+	GameState.set_flag("act01_start_seen")   # tanpa dialog pembuka agar pemain bebas bergerak
 	world = load("res://world.tscn").instantiate()
 	root.add_child(world)
 	await frames(10)

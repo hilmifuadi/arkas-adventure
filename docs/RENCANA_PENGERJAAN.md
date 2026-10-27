@@ -469,6 +469,7 @@ Deploy GitHub Pages (Fase 9, per episode), kontrol sentuh (Fase 8b, menjelang ri
 |---|---|
 | 0 Fondasi | File selesai ditulis (renderer Compatibility, input, autoload, struktur, kerangka ID/EN, layar judul, linter, validator, smoke test). **Menunggu verifikasi di Godot** (Remote Control) |
 | 1 Story Bible + Act 1 | Dokumen selesai di `docs/` (story_bible, act01_desain, matematika_kurikulum, aset_verifikasi) + data 3 puzzle Act 1. **Menunggu Gerbang 1 (persetujuan Anda)** |
-| 2 dan seterusnya | Belum dimulai |
+| 2 Inti game | Dikerjakan di branch `fase-2-inti-game` (PR draft): karakter, Arka, interaksi, dialog, audio, peta uji, simpan/muat, UI. Rincian dan yang belum: `docs/fase2_catatan.md`. **Menunggu review** |
+| 3 dan seterusnya | Belum dimulai |
 
 Perubahan folder: `kampung-ninja-inggris` diganti menjadi **`arkas-adventure`** (folder dan repo GitHub).

@@ -31,8 +31,14 @@ var sfx_volume := 1.0:
 	set(v):
 		sfx_volume = clampf(v, 0.0, 1.0)
 		apply_volume()
+const TEXT_SCALES:Array[float] = [1.0,1.34]
+
 var text_scale := 1.0
-var easy_mode := false
+var easy_mode := false:
+	set(v):
+		easy_mode = v
+		if is_node_ready() and has_node("/root/GameState"):
+			GameState.refresh_hearts_max()
 
 
 func _ready() -> void:
@@ -40,6 +46,11 @@ func _ready() -> void:
 	load_settings()
 	TranslationServer.set_locale(language)
 	apply_volume()
+
+
+## Ukuran font untuk teks panjang (dialog, objektif): 9 px dikali ukuran teks pilihan pemain.
+func font_size(base := 9) -> int:
+	return int(round(base*text_scale))
 
 
 func load_translations() -> void:

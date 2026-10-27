@@ -293,6 +293,18 @@ texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 region_rect = Rect2(0, 0, 16, 16)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_container_panel"]
+bg_color = Color(0.0784314, 0.105882, 0.105882, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.937255, 0.568627, 0.309804, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
 [resource]
 default_font = ExtResource("1_itlnu")
 default_font_size = 9
@@ -325,6 +337,7 @@ ItemList/styles/selected_focus = SubResource("StyleBoxTexture_rtjil")
 LineEdit/styles/focus = SubResource("StyleBoxTexture_qh8fu")
 LineEdit/styles/normal = SubResource("StyleBoxTexture_pefr2")
 Panel/styles/panel = SubResource("StyleBoxTexture_d63jr")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_container_panel")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_j7x53")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_6u3wi")
 TextEdit/styles/focus = SubResource("StyleBoxTexture_so3vk")

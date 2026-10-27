@@ -1,6 +1,8 @@
 [gd_scene load_steps=40 format=3 uid="uid://c7j4hgkdbtapk"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_804hp"]
+[ext_resource type="PackedScene" path="res://system/ui/hud.tscn" id="hud_scene"]
+[ext_resource type="PackedScene" path="res://system/ui/pause_menu.tscn" id="pause_scene"]
 [ext_resource type="Script" path="res://system/camera/camera_grid.gd" id="4_am12t"]
 [ext_resource type="Texture2D" uid="uid://bs4uxpqfesgko" path="res://system/environment/fx/rain.png" id="8_5w8v0"]
 [ext_resource type="Texture2D" uid="uid://b6qbpkjaljvvr" path="res://system/environment/fx/snow.png" id="8_a6yej"]
@@ -9,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dd2kmn7tta5gu" path="res://system/environment/fx/leaf.png" id="11_36wdo"]
 [ext_resource type="Script" path="res://system/environment/fog.gd" id="11_w52t8"]
 [ext_resource type="Texture2D" uid="uid://cpcojki7owcjg" path="res://system/environment/fx/raylight.png" id="15_uyose"]
-[ext_resource type="PackedScene" uid="uid://ck8bsyolnkr5h" path="res://system/ui/player_ui.tscn" id="15_wger8"]
 [ext_resource type="Shader" path="res://system/shader/shader_moving_texture.gdshader" id="16_fmd6i"]
 [ext_resource type="Texture2D" uid="uid://dxic1avnc53ct" path="res://system/environment/fx/fog.png" id="16_wcll6"]
 [ext_resource type="Script" path="res://system/transition/transition.gd" id="20_5rxny"]
@@ -246,11 +247,9 @@ texture = ExtResource("15_uyose")
 lifetime = 5.0
 speed_scale = 0.5
 
-[node name="Hud" type="CanvasLayer" parent="."]
-scale = Vector2(4, 4)
-transform = Transform2D(4, 0, 0, 4, 0, 0)
+[node name="Hud" parent="." instance=ExtResource("hud_scene")]
 
-[node name="PlayerUi" parent="Hud" instance=ExtResource("15_wger8")]
+[node name="PauseMenu" parent="." instance=ExtResource("pause_scene")]
 unique_name_in_owner = true
 
 [node name="ScreenFxLayer" type="CanvasLayer" parent="."]

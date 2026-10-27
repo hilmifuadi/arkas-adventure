@@ -20,6 +20,7 @@ var player:Player
 @onready var color_correction: ColorRect = %ColorCorrection
 @onready var camera_grid: CameraGrid = %CameraGrid
 @onready var pivot: Node2D = %Pivot
+@onready var pause_menu: PauseMenu = %PauseMenu
 
 
 func _init() -> void:
@@ -102,3 +103,9 @@ func apply_environment(resource_environment:ResourceEnvironment):
 
 	# GRADIENT
 	color_correction.gradient = resource_environment.color_gradient
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause") and !pause_menu.visible and !Dialogue.active and !Scenes.busy:
+		pause_menu.open()
+		get_viewport().set_input_as_handled()

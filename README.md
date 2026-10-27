@@ -42,16 +42,21 @@ assets/      aset terpilih dari pack + hasil generate (lihat assets/SOURCES.md)
 content/     konten game: menu, karakter, musuh, boss, peta per Act, puzzle
 system/      mesin game (karakter, senjata, damage, peta, UI) dan sistem inti (system/core)
 translations/ teks game dua bahasa (ui.id.json / ui.en.json)
-tools/       linter konsistensi brief, validator data, smoke test
+tools/       linter konsistensi brief, validator data, smoke test, generator aset, uji otomatis
 docs/        Story Bible dan desain per Act
 ```
 
 ## Pemeriksaan kualitas
 
 ```
-python tools/check_all.py                                  # linter brief + validator data
-godot --headless --path . --script tools/smoke_test.gd     # memuat semua scene dan resource
+python tools/check_all.py                                  # linter brief + validator data + smoke test Godot
+godot --headless --path . --script tools/smoke_test.gd     # hanya smoke test (exit 1 bila ada error skrip/resource)
+godot --path . --script tools/playtest_e2e.gd -- <folder>  # uji ujung ke ujung + screenshot (butuh jendela)
 ```
+
+Uji gameplay lain: `tools/playtest_player.gd`, `playtest_interact.gd`, `playtest_dialog.gd`, `playtest_audio.gd`,
+`playtest_world.gd`. Aset buatan skrip dibuat ulang dengan `python tools/gen_characters.py` dan `python tools/gen_props.py`;
+peta uji dengan `godot --headless --path . --script tools/build_maps.gd`. Catatan Fase 2 ada di `docs/fase2_catatan.md`.
 
 ## Kredit
 

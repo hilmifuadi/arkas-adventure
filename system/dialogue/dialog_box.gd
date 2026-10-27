@@ -69,6 +69,7 @@ func show_line(speaker:Dictionary, text:String, emote_name:String, choice_texts:
 	set_emote(emote_name)
 	voice_stream = VOICES.get(speaker.get("voice","voice2"),VOICES["voice2"])
 	voice_pitch = speaker.get("pitch",1.0)
+	text_label.label_settings.font_size = Settings.font_size()
 	text_label.text = text
 	text_label.visible_characters = 0
 	typed = 0.0

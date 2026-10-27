@@ -31,11 +31,11 @@ scale = Vector2(4, 4)
 
 [node name="Box" type="VBoxContainer" parent="Screen"]
 layout_mode = 0
-offset_left = 60.0
-offset_top = 20.0
-offset_right = 260.0
-offset_bottom = 170.0
-theme_override_constants/separation = 6
+offset_left = 50.0
+offset_top = 8.0
+offset_right = 270.0
+offset_bottom = 172.0
+theme_override_constants/separation = 4
 
 [node name="Title" type="Label" parent="Screen/Box"]
 layout_mode = 2
@@ -44,11 +44,27 @@ text = "TITLE_GAME"
 horizontal_alignment = 1
 autowrap_mode = 3
 
+[node name="Spacer" type="Control" parent="Screen/Box"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
 [node name="StartButton" type="Button" parent="Screen/Box"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 text = "UI_START"
+
+[node name="ContinueButton" type="Button" parent="Screen/Box"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "UI_CONTINUE"
+
+[node name="SettingsButton" type="Button" parent="Screen/Box"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "UI_SETTINGS"
 
 [node name="Languages" type="HBoxContainer" parent="Screen/Box"]
 layout_mode = 2
@@ -58,13 +74,62 @@ alignment = 1
 [node name="IndonesianButton" type="Button" parent="Screen/Box/Languages"]
 unique_name_in_owner = true
 auto_translate_mode = 2
-custom_minimum_size = Vector2(70, 18)
+custom_minimum_size = Vector2(76, 16)
 layout_mode = 2
 text = "Bahasa Indonesia"
 
 [node name="EnglishButton" type="Button" parent="Screen/Box/Languages"]
 unique_name_in_owner = true
 auto_translate_mode = 2
-custom_minimum_size = Vector2(70, 18)
+custom_minimum_size = Vector2(50, 16)
 layout_mode = 2
 text = "English"
+
+[node name="ConfirmPanel" type="Control" parent="Screen"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="Dim" type="ColorRect" parent="Screen/ConfirmPanel"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Panel" type="PanelContainer" parent="Screen/ConfirmPanel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 50.0
+offset_right = 280.0
+offset_bottom = 130.0
+
+[node name="Margin" type="MarginContainer" parent="Screen/ConfirmPanel/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Rows" type="VBoxContainer" parent="Screen/ConfirmPanel/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Question" type="Label" parent="Screen/ConfirmPanel/Panel/Margin/Rows"]
+layout_mode = 2
+text = "UI_NEW_GAME_CONFIRM"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="YesButton" type="Button" parent="Screen/ConfirmPanel/Panel/Margin/Rows"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+text = "UI_YES"
+
+[node name="NoButton" type="Button" parent="Screen/ConfirmPanel/Panel/Margin/Rows"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+text = "UI_NO"

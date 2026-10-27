@@ -37,6 +37,7 @@ func start_new_game() -> void:
 	GameState.current_map = START_MAP
 	GameState.current_spawn = START_SPAWN
 	GameState.restore_position = false
+	Quests.set_objective("OBJ_TALK_HILMI")
 	go_to(WORLD_SCENE)
 
 

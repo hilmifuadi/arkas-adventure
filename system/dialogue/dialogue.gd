@@ -15,7 +15,7 @@ extends Node
 ##   "goto": "label"             setelah baris ini lompat ke label (baris tanpa "text" = hanya lompat)
 ##   "end": true                 akhiri dialog setelah baris ini
 ## Kondisi: {"flag": "x"}, {"not_flag": "x"}, {"has_item": "x"}, {"all": [...]}, {"any": [...]}
-## Efek: set_flag, clear_flag, give_item (+count), take_item, heal_all, hide_npc (+seconds), sfx, autosave.
+## Efek: set_flag, clear_flag, give_item (+count), take_item, heal_all, hide_npc (+seconds), sfx, objective, autosave.
 
 
 signal started(dialog_id:String)
@@ -212,5 +212,7 @@ func apply_effects(effects:Array) -> void:
 				npc.hide_for(effect.get("seconds",5.0))
 		if effect.has("sfx"):
 			Audio.play_sfx(effect["sfx"])
+		if effect.has("objective"):
+			Quests.set_objective(effect["objective"])
 		if effect.get("autosave",false):
 			SaveSystem.autosave()
