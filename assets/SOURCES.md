@@ -37,3 +37,14 @@ Dibuat ulang secara deterministik (recolor palet + aksesori piksel); jangan died
 Pack sumber: `Ninja Adventure - Asset Pack/Actor/Character/` (folder pack ada di luar repo).
 Skrip mencari pack otomatis di folder induk repo, atau pakai `--pack "<folder>"`.
 Scene tokoh ada di `content/characters/<nama>/<nama>.tscn`.
+
+## Aset UI/item yang disalin dari pack (butir interaksi dan dialog)
+
+| File di repo | Sumber di pack |
+|---|---|
+| `assets/ui/key_e.png` | `Ui/Input/Keyboard/KeyE.png` |
+| `assets/ui/button_y.png` | `Ui/Input/Gamepad/ButtonY/ButtonY.png` |
+| `assets/ui/dialog_box_faceset.png`, `dialog_box.png`, `choice_box.png`, `arrow.png` | `Ui/Dialog/DialogBoxFaceset.png`, `DialogBox.png`, `ChoiceBox.png`, `Ui/Arrow.png` |
+| `assets/items/little_chest.png` | `Items/Treasure/LittleTreasureChest.png` (32x16: tertutup, terbuka) |
+| `assets/fx/smoke.png` | `FX/Smoke/Smoke/SpriteSheet.png` (6 frame 32x32, kepulan "puff") |
+| `content/weapon/katana/*` | `Items/Weapons/Katana/Sprite.png`, `SpriteInHand.png` |

@@ -11,3 +11,11 @@ var last_finished_msec := 0
 ## True selama dialog berjalan dan sesaat setelahnya (mencegah tombol interaksi yang sama terpakai dua kali).
 func is_busy() -> bool:
 	return active or Time.get_ticks_msec() - last_finished_msec < 250
+
+
+func start(_dialog_id:String, _context := {}) -> void:
+	pass
+
+
+func show_message(_text_key:String, _params := {}, _speaker := "") -> void:
+	pass

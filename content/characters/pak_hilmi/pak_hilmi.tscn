@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_char"]
 [ext_resource type="Texture2D" path="res://assets/generated/characters/pak_hilmi/SpriteSheet.png" id="2_sheet"]
 [ext_resource type="Resource" path="res://content/team/npc_team.tres" id="3_team"]
+
+[ext_resource type="Script" path="res://system/npc/npc.gd" id="4_npc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hit"]
 radius = 8.0
@@ -11,6 +13,9 @@ radius = 8.0
 radius = 6.0
 
 [node name="PakHilmi" instance=ExtResource("1_char")]
+script = ExtResource("4_npc")
+npc_id = "pak_hilmi"
+dialog_id = "hilmi_sapa"
 team = ExtResource("3_team")
 
 [node name="Shape" type="CollisionShape2D" parent="Hitbox" index="0"]
