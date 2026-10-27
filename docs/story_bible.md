@@ -20,9 +20,9 @@
 |---|---|
 | Desa | **Desa Daun** (jangan "Konoha", jangan "Leaf Village" di versi Inggris) |
 | Pemeran utama | **Arka** (L) |
-| Pendamping | **Bida** (P), **Nadiya** (P), **Farah** (P) |
-| Pemimpin desa | **Hokage Pak Hilmi** |
-| Istri Hokage | **Dokter Zahra** |
+| Saudara dan rekan tim Arka | **Bida** (P), **Nadiya** (P), **Farah** (P) (anak kandung Hokage dan Dokter Zahra) |
+| Pemimpin desa | **Hokage Pak Hilmi** (ayah Arka, Bida, Nadiya, Farah) |
+| Istri Hokage | **Dokter Zahra** (ibu Arka, Bida, Nadiya, Farah) |
 | Antagonis | **Kuro** |
 | Mesin kuno | **Mesin Keseimbangan Desa** |
 | Proyek antagonis | **Proyek Hokage Abadi** |
@@ -54,16 +54,38 @@ Versi Inggris memakai nama yang sama; istilah dijelaskan lewat konteks dialog. "
 | Tokoh | Warna utama | Ciri khas (siluet) |
 |---|---|---|
 | Arka | Hijau daun + ikat kepala oranye | Katana di punggung, rambut mencuat |
-| Bida | Biru tua | Kacamata bulat, kuncir, gulungan strategi di punggung |
-| Nadiya | Merah | Ikat rambut tinggi, bandolir shuriken/kunai |
-| Farah | Kuning | Goggle di dahi, ransel penuh antena dan alat |
+| Bida | Biru tua | **Tudung ninja** biru tua menutup rapat seluruh kepala dan leher (tidak ada rambut atau leher terlihat; ujung kain berkibar, garis tepi kain), kacamata bulat, gulungan strategi di punggung |
+| Nadiya | Merah | **Tudung ninja** merah menutup rapat kepala dan leher, pita kuning di sisi tudung, ujung kain berkibar, bandolir shuriken/kunai |
+| Farah | Kuning | **Tudung ninja** kuning menutup rapat kepala dan leher, goggle dipakai di dahi di atas tudung, ransel penuh antena dan alat |
+
+Keputusan tampilan (pengguna): **Bida, Nadiya, dan Farah berhijab atau bertudung ninja** (kain penutup kepala dan leher ala ninja, sesuai gaya tiap tokoh, **tertutup rapat**: tidak ada rambut atau leher yang terlihat di sprite maupun faceset); **Dokter Zahra berhijab sangat tertutup** (lihat 3.2). Arka dan Pak Hilmi tidak berubah. Tidak ada penyebutan kuncir atau ikat rambut untuk tokoh perempuan; detail tambahan memakai ujung tudung yang berkibar, pita di sisi tudung, dan garis tepi kain.
 
 ### 3.2 Tokoh pendukung
 | Tokoh | Peran | Sifat lucu | Fungsi |
 |---|---|---|---|
 | **Hokage Pak Hilmi** | Pemimpin bijak; menyimpan rahasia tentang Kuro dan Mesin | Takut ayam (bersembunyi saat mendengar kokok) | Mentor, sumber informasi, penghubung sejarah desa |
-| **Dokter Zahra** | Membantu memimpin Desa Daun, dokter desa | Keibuan dan lembut, takut serangga | **Menyembuhkan rombongan setiap kali mereka datang ke rumah Hokage dan berinteraksi dengannya** |
+| **Dokter Zahra** | Membantu memimpin Desa Daun, dokter desa; **berhijab sangat tertutup seperti hijab muslimah**: kain biru muda yang lembut menutup seluruh rambut, dahi atas, sisi wajah, telinga, dan leher, lalu jatuh panjang menutup bahu dan dada; hanya wajah (mata, hidung, mulut) yang terlihat, dengan jas putih dan lencana palang merah di dada | Keibuan dan lembut, takut serangga | **Menyembuhkan rombongan setiap kali mereka datang ke rumah Hokage dan berinteraksi dengannya** |
 | **Kuro** | Antagonis: dulu murid berbakat yang ikut membangun Mesin; proyek dihentikan setelah kecelakaan, ia merasa dikhianati | Tetap manusiawi (lihat usulan di 3.3) | Berubah dari lawan menjadi sekutu yang memperbaiki desa |
+
+**Panggilan keluarga (keputusan pengguna):** Arka, Bida, Nadiya, dan Farah memanggil Pak Hilmi **"Ayah"** dan Dokter Zahra **"Mamah"** dalam percakapan sehari-hari (EN sementara: "Dad" / "Mom"; bisa diganti). Warga lain, narasi, dan nama pembicara di dialog tetap "Hokage Pak Hilmi" dan "Dokter Zahra"; nama baku di brief tidak berubah.
+
+**Keputusan final pengguna (dikonfirmasi): hubungan keluarga = anak kandung.** **Arka, Bida, Nadiya, dan Farah keempatnya adalah
+anak kandung Hokage Pak Hilmi dan Dokter Zahra, jadi bersaudara dan sekaligus rekan tim.** Hanya usia dan urutan lahir yang belum
+ditentukan **[USULAN]** (jangan ditetapkan dulu). **Perubahan dari brief yang disetujui:** brief asli menyebut Bida, Nadiya, Farah sebagai
+"tiga teman perempuan" Arka; mulai sekarang mereka **saudara dan rekan tim**.
+
+Dampak ringkas:
+- **Arka** bercita-cita menjadi Hokage seperti ayahnya, tetapi tetap lucu: ia mengira Hokage itu terkenal dan dapat ramen gratis,
+  padahal sehari-hari ayahnya melayani warga. Tema perkembangan Arka (3.1) jadi juga soal memahami pekerjaan ayahnya.
+- **Pak Hilmi sengaja tidak memberi keistimewaan** pada anak-anaknya di ujian (humor dan tema pemimpin yang adil).
+- **Tim adalah keluarga**: kerja sama dan saling mendengarkan menjadi tema keluarga. Dialog antar-saudara tetap akrab ala rekan tim
+  (boleh memanggil nama); kalimat khas tiap tokoh tidak berubah.
+- **Pak Hilmi dan Dokter Zahra** bersikap sebagai orang tua sekaligus pemimpin desa; Dokter Zahra menyembuhkan keluarganya di rumah
+  Hokage (rumah mereka sendiri).
+- **Kuro** (murid Pak Hilmi di akademi yang kini merasa ditinggalkan gurunya) makin kuat sebagai tokoh: di Act 8 ia bisa melihat Arka
+  sebagai "anak sang guru" dan membandingkan nasibnya. Motivasi Kuro di brief dan 4.1 **tidak berubah**.
+- Panggilan: keempat anak memanggil Pak Hilmi **"Ayah"** dan Dokter Zahra **"Mamah"** (EN sementara "Dad" / "Mom"); warga lain dan
+  narasi tetap "Hokage Pak Hilmi" dan "Dokter Zahra", nama pembicara di dialog tidak berubah.
 
 ### 3.3 [USULAN] Kuro yang manusiawi
 Supaya Kuro tidak jadi penjahat satu dimensi:

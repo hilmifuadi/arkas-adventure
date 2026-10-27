@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://system/ui/hud.gd" id="1_hud"]
+[ext_resource type="Theme" path="res://theme/theme_1/theme_1.tres" id="2_theme"]
+[ext_resource type="Script" path="res://system/ui/heart_bar.gd" id="3_hearts"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_objective"]
+bg_color = Color(0.0784314, 0.105882, 0.105882, 0.6)
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 6.0
+content_margin_bottom = 3.0
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Hud" type="CanvasLayer"]
+layer = 5
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+script = ExtResource("1_hud")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+theme = ExtResource("2_theme")
+
+[node name="Hearts" type="Control" parent="Root"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 131.0
+offset_bottom = 19.0
+mouse_filter = 2
+script = ExtResource("3_hearts")
+
+[node name="ObjectiveLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Anchor" type="Control" parent="ObjectiveLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 12.0
+offset_top = 80.0
+offset_right = 52.0
+offset_bottom = 120.0
+mouse_filter = 2
+theme = ExtResource("2_theme")
+
+[node name="ObjectivePanel" type="PanelContainer" parent="ObjectiveLayer/Anchor"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_objective")
+
+[node name="ObjectiveLabel" type="Label" parent="ObjectiveLayer/Anchor/ObjectivePanel"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 18

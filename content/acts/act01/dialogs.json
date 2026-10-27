@@ -1,0 +1,202 @@
+{
+	"act01_s1_pembuka": {
+		"lines": [
+			{
+				"speaker": "arka",
+				"text": "DLG_S1_ARKA_1",
+				"emote": "happy"
+			},
+			{
+				"speaker": "bida",
+				"text": "DLG_S1_BIDA_1",
+				"emote": "think"
+			},
+			{
+				"speaker": "arka",
+				"text": "DLG_S1_ARKA_2",
+				"emote": "proud"
+			},
+			{
+				"speaker": "bida",
+				"text": "DLG_S1_BIDA_2"
+			},
+			{
+				"speaker": "arka",
+				"text": "DLG_S1_ARKA_3",
+				"emote": "sweat",
+				"effects": [
+					{
+						"set_flag": "act01_start_seen"
+					}
+				]
+			}
+		]
+	},
+	"zahra_sembuhkan": {
+		"lines": [
+			{
+				"condition": {
+					"flag": "zahra_met"
+				},
+				"goto": "lagi"
+			},
+			{
+				"speaker": "dokter_zahra",
+				"text": "DLG_ZAHRA_HALO",
+				"emote": "happy"
+			},
+			{
+				"speaker": "dokter_zahra",
+				"text": "DLG_ZAHRA_PERIKSA",
+				"emote": "think",
+				"effects": [
+					{
+						"set_flag": "zahra_met"
+					}
+				],
+				"goto": "sembuh"
+			},
+			{
+				"id": "lagi",
+				"speaker": "dokter_zahra",
+				"text": "DLG_ZAHRA_LAGI",
+				"emote": "smile"
+			},
+			{
+				"id": "sembuh",
+				"speaker": "dokter_zahra",
+				"text": "DLG_ZAHRA_SEHAT",
+				"emote": "love",
+				"effects": [
+					{
+						"heal_all": true
+					}
+				]
+			},
+			{
+				"speaker": "arka",
+				"text": "DLG_ZAHRA_ARKA_RAMEN",
+				"emote": "happy"
+			},
+			{
+				"speaker": "dokter_zahra",
+				"text": "DLG_ZAHRA_SAYUR",
+				"emote": "smile"
+			},
+			{
+				"speaker": "arka",
+				"text": "DLG_ZAHRA_TERIMA_KASIH",
+				"emote": "love",
+				"end": true
+			}
+		]
+	},
+	"hilmi_sapa": {
+		"lines": [
+			{
+				"speaker": "pak_hilmi",
+				"text": "DLG_HILMI_SAPA",
+				"emote": "smile",
+				"effects": [
+					{
+						"objective": "OBJ_TRAIN"
+					}
+				]
+			},
+			{
+				"id": "tanya",
+				"speaker": "pak_hilmi",
+				"text": "DLG_HILMI_TANYA",
+				"choices": [
+					{
+						"text": "CH_HILMI_FESTIVAL",
+						"goto": "festival"
+					},
+					{
+						"text": "CH_HILMI_AYAM",
+						"goto": "ayam"
+					},
+					{
+						"text": "CH_HILMI_PAMIT",
+						"end": true
+					}
+				]
+			},
+			{
+				"id": "festival",
+				"speaker": "pak_hilmi",
+				"text": "DLG_HILMI_FESTIVAL",
+				"emote": "proud"
+			},
+			{
+				"speaker": "arka",
+				"text": "DLG_HILMI_ARKA_RAMEN",
+				"emote": "happy"
+			},
+			{
+				"speaker": "pak_hilmi",
+				"text": "DLG_HILMI_RAMEN_GRATIS",
+				"emote": "sweat",
+				"end": true
+			},
+			{
+				"id": "ayam",
+				"speaker": "pak_hilmi",
+				"text": "DLG_HILMI_AYAM",
+				"emote": "surprise",
+				"effects": [
+					{
+						"hide_npc": "pak_hilmi",
+						"seconds": 6.0
+					}
+				]
+			},
+			{
+				"speaker": "arka",
+				"text": "DLG_HILMI_ARKA_AYAM",
+				"emote": "question",
+				"end": true
+			}
+		]
+	},
+	"ibu_sari_sapa": {
+		"lines": [
+			{
+				"speaker": "ibu_sari",
+				"text": "DLG_SARI_SAPA",
+				"emote": "happy"
+			},
+			{
+				"speaker": "arka",
+				"text": "DLG_SARI_ARKA",
+				"emote": "love"
+			},
+			{
+				"speaker": "ibu_sari",
+				"text": "DLG_SARI_HOKAGE",
+				"emote": "smile",
+				"end": true
+			}
+		]
+	},
+	"zahra_bangun": {
+		"lines": [
+			{
+				"speaker": "dokter_zahra",
+				"text": "DLG_BANGUN_ZAHRA",
+				"emote": "worried"
+			},
+			{
+				"speaker": "arka",
+				"text": "DLG_BANGUN_ARKA",
+				"emote": "dizzy"
+			},
+			{
+				"speaker": "dokter_zahra",
+				"text": "DLG_BANGUN_SEHAT",
+				"emote": "smile",
+				"end": true
+			}
+		]
+	}
+}

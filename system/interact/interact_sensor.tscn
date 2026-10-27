@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://system/interact/interact_sensor.gd" id="1_sensor"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sensor"]
+radius = 12.0
+
+[node name="InteractSensor" type="Area2D"]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+script = ExtResource("1_sensor")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sensor")
+
+[node name="Prompt" type="Sprite2D" parent="."]
+z_index = 100

@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_x6vbu")
-team_name = ""
-ally_team = Array[ExtResource("1_x6vbu")]([])
-enemy_team = Array[ExtResource("1_x6vbu")]([])
+team = 0
+ally_team = Array[int]([])
+friendly_fire = false

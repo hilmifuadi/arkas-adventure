@@ -1,0 +1,38 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_char"]
+[ext_resource type="Texture2D" path="res://assets/generated/characters/arka/SpriteSheet.png" id="2_sheet"]
+[ext_resource type="Resource" path="res://content/team/player_team.tres" id="3_team"]
+[ext_resource type="Script" path="res://system/player/player.gd" id="4_player"]
+[ext_resource type="PackedScene" uid="uid://bahejxgq2chrj" path="res://system/weapon/weapon.tscn" id="5_weapon"]
+[ext_resource type="Resource" path="res://content/weapon/katana/katana.tres" id="6_katana"]
+[ext_resource type="PackedScene" path="res://system/interact/interact_sensor.tscn" id="7_sensor"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hit"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_body"]
+radius = 6.0
+
+[node name="Arka" instance=ExtResource("1_char")]
+script = ExtResource("4_player")
+weapon_resource = ExtResource("6_katana")
+team = ExtResource("3_team")
+
+[node name="Shape" type="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_hit")
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource("2_sheet")
+
+[node name="Shape" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_body")
+
+[node name="Weapon" parent="." index="4" instance=ExtResource("5_weapon")]
+position = Vector2(0, -3)
+hide_when_idle = true
+
+[node name="InteractSensor" parent="." index="5" instance=ExtResource("7_sensor")]
+position = Vector2(0, -3)

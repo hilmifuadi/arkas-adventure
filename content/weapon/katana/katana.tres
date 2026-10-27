@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ResourceWeapon" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://system/damage/resource_damage.gd" id="1_damage"]
+[ext_resource type="Script" path="res://system/weapon/resource_weapon.gd" id="2_weapon"]
+[ext_resource type="Texture2D" path="res://content/weapon/katana/sprite.png" id="3_sprite"]
+[ext_resource type="Texture2D" path="res://content/weapon/katana/in_hand.png" id="4_hand"]
+
+[sub_resource type="Resource" id="Resource_damage"]
+script = ExtResource("1_damage")
+amount = 1
+push_force = 140
+
+[resource]
+script = ExtResource("2_weapon")
+sprite = ExtResource("3_sprite")
+sprite_in_hand = ExtResource("4_hand")
+anim_type = 0
+damage = SubResource("Resource_damage")

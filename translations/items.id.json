@@ -1,0 +1,11 @@
+{
+	"ITEM_COIN": "koin",
+	"ITEM_ONIGIRI": "onigiri",
+	"ITEM_SHURIKEN_LATIHAN": "shuriken latihan",
+	"ITEM_SHURIKEN": "shuriken",
+	"ITEM_KUNAI_LATIHAN": "kunai latihan",
+	"ITEM_SCROLL_LANGKAH": "Gulungan Langkah",
+	"ITEM_SCROLL_SERANG": "Gulungan Serang",
+	"ITEM_SCROLL_RAHASIA": "Gulungan Rahasia",
+	"MSG_ITEM_GOT": "Kamu mendapat {count} {item}!"
+}

@@ -1,0 +1,11 @@
+{
+	"ITEM_COIN": "coin",
+	"ITEM_ONIGIRI": "onigiri",
+	"ITEM_SHURIKEN_LATIHAN": "training shuriken",
+	"ITEM_SHURIKEN": "shuriken",
+	"ITEM_KUNAI_LATIHAN": "training kunai",
+	"ITEM_SCROLL_LANGKAH": "Step Scroll",
+	"ITEM_SCROLL_SERANG": "Attack Scroll",
+	"ITEM_SCROLL_RAHASIA": "Secret Scroll",
+	"MSG_ITEM_GOT": "You got {count} {item}!"
+}

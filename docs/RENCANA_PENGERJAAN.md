@@ -141,8 +141,8 @@ Path relatif terhadap `Ninja Adventure - Asset Pack\Ninja Adventure - Asset Pack
 | Kebutuhan | Basis di pack | Perlu diubah? |
 |---|---|---|
 | **Arka (L)** | `Actor/Character/NinjaGreen` atau `NinjaRed`, + senjata `Items/Weapons/Katana` (opsional `CharacterAnimated/NinjaGreen` untuk roll/climb) | Recolor + ikat kepala; faceset khas |
-| **Bida (P)** | `NinjaBlue` / `NinjaBlue2` | Kacamata, kuncir, gulungan; faceset |
-| **Nadiya (P)** | `NinjaRed2` / `NinjaYellow` | Busur/ransel kunai, ikat rambut; faceset |
+| **Bida (P)** | `NinjaBlue` / `NinjaBlue2` | Tudung ninja biru tua, kacamata, gulungan; faceset |
+| **Nadiya (P)** | `NinjaRed2` / `NinjaYellow` | Busur/ransel kunai, tudung ninja merah dengan pita; faceset |
 | **Farah (P)** | `NinjaYellow` / `NinjaBomb` | Goggle, ransel gadget; faceset |
 | **Pak Hilmi** | `Master` / `OldMan2` / `Monk` | Topi/jubah Hokage; faceset |
 | **Dokter Zahra** | `Woman` / `Princess` | Jas putih, ikon palang; faceset |
@@ -432,6 +432,8 @@ Catatan: judul dan urutan Act tidak diubah dari brief.
 4. Aset karakter dari **skrip piksel**, bukan gambar AI. → bagian 4.
 5. Rilis **bertahap parsial**. → bagian 5.1.
 6. Judul: **"Petualangan Arka di Kampung Ninja"**.
+7. Tampilan: Dokter Zahra berhijab; Bida, Nadiya, Farah berhijab atau bertudung ninja (bagian 3.1, story bible).
+8. Keluarga: Arka, Bida, Nadiya, Farah **anak kandung** Pak Hilmi dan Dokter Zahra (saudara dan rekan tim; perubahan dari brief "tiga teman"), memanggil mereka "Ayah" dan "Mamah".
 
 **Asumsi bawaan yang masih berlaku (ubah jika berbeda)**
 - Partner AI + perintah sederhana, pindah karakter hanya di momen tertentu.
@@ -469,6 +471,7 @@ Deploy GitHub Pages (Fase 9, per episode), kontrol sentuh (Fase 8b, menjelang ri
 |---|---|
 | 0 Fondasi | File selesai ditulis (renderer Compatibility, input, autoload, struktur, kerangka ID/EN, layar judul, linter, validator, smoke test). **Menunggu verifikasi di Godot** (Remote Control) |
 | 1 Story Bible + Act 1 | Dokumen selesai di `docs/` (story_bible, act01_desain, matematika_kurikulum, aset_verifikasi) + data 3 puzzle Act 1. **Menunggu Gerbang 1 (persetujuan Anda)** |
-| 2 dan seterusnya | Belum dimulai |
+| 2 Inti game | Dikerjakan di branch `fase-2-inti-game` (PR draft): karakter, Arka, interaksi, dialog, audio, peta uji, simpan/muat, UI. Rincian dan yang belum: `docs/fase2_catatan.md`. **Menunggu review** |
+| 3 dan seterusnya | Belum dimulai |
 
 Perubahan folder: `kampung-ninja-inggris` diganti menjadi **`arkas-adventure`** (folder dan repo GitHub).

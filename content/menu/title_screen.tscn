@@ -22,49 +22,114 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0980392, 0.223529, 0.168627, 1)
 
-[node name="Box" type="VBoxContainer" parent="."]
+[node name="Screen" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -170.0
-offset_right = 300.0
-offset_bottom = 170.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(4, 4)
 
-[node name="Title" type="Label" parent="Box"]
+[node name="Box" type="VBoxContainer" parent="Screen"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 8.0
+offset_right = 270.0
+offset_bottom = 172.0
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="Screen/Box"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 18
 text = "TITLE_GAME"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="StartButton" type="Button" parent="Box"]
+[node name="Spacer" type="Control" parent="Screen/Box"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Screen/Box"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 48)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 text = "UI_START"
 
-[node name="Languages" type="HBoxContainer" parent="Box"]
+[node name="ContinueButton" type="Button" parent="Screen/Box"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-theme_override_constants/separation = 12
+text = "UI_CONTINUE"
+
+[node name="SettingsButton" type="Button" parent="Screen/Box"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "UI_SETTINGS"
+
+[node name="Languages" type="HBoxContainer" parent="Screen/Box"]
+layout_mode = 2
+theme_override_constants/separation = 4
 alignment = 1
 
-[node name="IndonesianButton" type="Button" parent="Box/Languages"]
+[node name="IndonesianButton" type="Button" parent="Screen/Box/Languages"]
 unique_name_in_owner = true
 auto_translate_mode = 2
-custom_minimum_size = Vector2(160, 40)
+custom_minimum_size = Vector2(76, 16)
 layout_mode = 2
 text = "Bahasa Indonesia"
 
-[node name="EnglishButton" type="Button" parent="Box/Languages"]
+[node name="EnglishButton" type="Button" parent="Screen/Box/Languages"]
 unique_name_in_owner = true
 auto_translate_mode = 2
-custom_minimum_size = Vector2(160, 40)
+custom_minimum_size = Vector2(50, 16)
 layout_mode = 2
 text = "English"
+
+[node name="ConfirmPanel" type="Control" parent="Screen"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="Dim" type="ColorRect" parent="Screen/ConfirmPanel"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Panel" type="PanelContainer" parent="Screen/ConfirmPanel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 50.0
+offset_right = 280.0
+offset_bottom = 130.0
+
+[node name="Margin" type="MarginContainer" parent="Screen/ConfirmPanel/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Rows" type="VBoxContainer" parent="Screen/ConfirmPanel/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Question" type="Label" parent="Screen/ConfirmPanel/Panel/Margin/Rows"]
+layout_mode = 2
+text = "UI_NEW_GAME_CONFIRM"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="YesButton" type="Button" parent="Screen/ConfirmPanel/Panel/Margin/Rows"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+text = "UI_YES"
+
+[node name="NoButton" type="Button" parent="Screen/ConfirmPanel/Panel/Margin/Rows"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+text = "UI_NO"

@@ -1,0 +1,165 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://system/map/map.gd" id="1_6uhel"]
+[ext_resource type="Texture2D" path="res://system/map/map_size_bg.png" id="2_lptue"]
+[ext_resource type="TileSet" path="res://content/map/tileset.tres" id="3_f1bv7"]
+[ext_resource type="Script" path="res://system/map/spawn_point.gd" id="4_ka0ua"]
+[ext_resource type="Script" path="res://system/map/map_door.gd" id="5_ybhwf"]
+[ext_resource type="PackedScene" path="res://content/characters/dokter_zahra/dokter_zahra.tscn" id="6_athe0"]
+[ext_resource type="Script" path="res://system/npc/npc.gd" id="7_ttl5l"]
+[ext_resource type="Resource" path="res://content/team/npc_team.tres" id="8_3hxwq"]
+[ext_resource type="Script" path="res://system/environment/environment_area.gd" id="9_y4lhj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6l63"]
+size = Vector2(192, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dslkv"]
+size = Vector2(32, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adnas"]
+size = Vector2(32, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojcis"]
+size = Vector2(96, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg1rj"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryy58"]
+size = Vector2(192, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaamj"]
+size = Vector2(32, 16)
+
+[node name="MapRumahHokage" type="Node2D" unique_id=289790132]
+script = ExtResource("1_6uhel")
+map_id = "rumah_hokage"
+music = "sunny"
+title_key = "MAP_RUMAH_HOKAGE"
+
+[node name="ScreenGridRef" type="TextureRect" parent="." unique_id=531643765]
+auto_translate_mode = 1
+modulate = Color(1, 1, 1, 0.0745098)
+z_index = 3
+offset_left = -1416.0
+offset_top = -950.0
+offset_right = -19.0
+offset_bottom = 196.0
+scale = Vector2(2, 2)
+mouse_filter = 2
+texture = ExtResource("2_lptue")
+stretch_mode = 1
+
+[node name="Tilemap" type="TileMap" parent="." unique_id=1239878736]
+y_sort_enabled = true
+position = Vector2(8, 8)
+tile_set = ExtResource("3_f1bv7")
+format = 2
+layer_0/name = "Wall"
+layer_0/y_sort_enabled = true
+layer_0/y_sort_origin = -5
+layer_0/navigation_enabled = false
+layer_0/tile_data = PackedInt32Array(-196614, 4, 0, -262139, 262148, 0, 262138, 4, 4, 196613, 262148, 4, -196613, 131076, 0, 262139, 131076, 4, -196612, 65540, 0, 262140, 65540, 4, -196611, 131076, 0, 262141, 131076, 4, -196610, 65540, 0, 262142, 65540, 4, -196609, 131076, 0, -262144, 65540, 0, -262143, 131076, 0, 196609, 131076, 4, -262142, 65540, 0, 196610, 65540, 4, -262141, 131076, 0, 196611, 131076, 4, -262140, 65540, 0, 196612, 65540, 4, -131078, 4, 1, -196603, 262148, 1, -65542, 4, 2, -131067, 262148, 2, -6, 4, 3, -65531, 262148, 3, 65530, 4, 1, 5, 262148, 1, 131066, 4, 2, 65541, 262148, 2, 196602, 4, 3, 131077, 262148, 3, -131077, 5, 196608, -196604, 5, 196608, 196603, 5, 65536)
+layer_1/name = "Wall2"
+layer_1/y_sort_enabled = true
+layer_1/y_sort_origin = -5
+layer_2/name = "FloorDetail"
+layer_2/y_sort_enabled = true
+layer_2/z_index = -1
+layer_2/navigation_enabled = false
+layer_3/name = "Floor"
+layer_3/z_index = -2
+layer_3/navigation_enabled = false
+layer_3/tile_data = PackedInt32Array(-131077, 65538, 1, -65541, 65538, 1, -5, 65538, 1, 65531, 65538, 1, 131067, 65538, 1, 196603, 65538, 1, -131076, 65538, 1, -65540, 65538, 1, -4, 65538, 1, 65532, 65538, 1, 131068, 65538, 1, 196604, 65538, 1, -131075, 65538, 1, -65539, 65538, 1, -3, 65538, 1, 65533, 65538, 1, 131069, 65538, 1, 196605, 65538, 1, -131074, 65538, 1, -65538, 65538, 1, -2, 65538, 1, 65534, 65538, 1, 131070, 65538, 1, 196606, 65538, 1, -131073, 65538, 1, -65537, 65538, 1, -1, 65538, 1, 65535, 65538, 1, 131071, 65538, 1, 196607, 65538, 1, -196608, 65538, 1, -131072, 65538, 1, -65536, 65538, 1, 0, 65538, 1, 65536, 65538, 1, 131072, 65538, 1, -196607, 65538, 1, -131071, 65538, 1, -65535, 65538, 1, 1, 65538, 1, 65537, 65538, 1, 131073, 65538, 1, -196606, 65538, 1, -131070, 65538, 1, -65534, 65538, 1, 2, 65538, 1, 65538, 65538, 1, 131074, 65538, 1, -196605, 65538, 1, -131069, 65538, 1, -65533, 65538, 1, 3, 65538, 1, 65539, 65538, 1, 131075, 65538, 1, -196604, 65538, 1, -131068, 65538, 1, -65532, 65538, 1, 4, 65538, 1, 65540, 65538, 1, 131076, 65538, 1)
+
+[node name="DindingAtas" type="StaticBody2D" parent="Tilemap" unique_id=14627328]
+position = Vector2(0, -64)
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingAtas" unique_id=1599462622]
+shape = SubResource("RectangleShape2D_d6l63")
+
+[node name="DindingKiri" type="StaticBody2D" parent="Tilemap" unique_id=800475359]
+position = Vector2(-96, 0)
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingKiri" unique_id=188495308]
+shape = SubResource("RectangleShape2D_dslkv")
+
+[node name="DindingKanan" type="StaticBody2D" parent="Tilemap" unique_id=510472020]
+position = Vector2(96, 0)
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingKanan" unique_id=1825685978]
+shape = SubResource("RectangleShape2D_adnas")
+
+[node name="DindingBawahKiri" type="StaticBody2D" parent="Tilemap" unique_id=445412986]
+position = Vector2(-48, 56)
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingBawahKiri" unique_id=1722168481]
+shape = SubResource("RectangleShape2D_ojcis")
+
+[node name="DindingBawahKanan" type="StaticBody2D" parent="Tilemap" unique_id=212086614]
+position = Vector2(56, 56)
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingBawahKanan" unique_id=106809577]
+shape = SubResource("RectangleShape2D_hg1rj")
+
+[node name="BatasBawah" type="StaticBody2D" parent="Tilemap" unique_id=1953769222]
+position = Vector2(0, 88)
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/BatasBawah" unique_id=621097691]
+shape = SubResource("RectangleShape2D_ryy58")
+
+[node name="Spawn_door" type="Marker2D" parent="Tilemap" unique_id=1661020749]
+position = Vector2(0, 40)
+script = ExtResource("4_ka0ua")
+spawn_id = "door"
+
+[node name="Spawn_bed" type="Marker2D" parent="Tilemap" unique_id=1778428619]
+position = Vector2(-40, 8)
+script = ExtResource("4_ka0ua")
+spawn_id = "bed"
+
+[node name="Spawn_default" type="Marker2D" parent="Tilemap" unique_id=1199128594]
+position = Vector2(0, 40)
+script = ExtResource("4_ka0ua")
+
+[node name="PintuKeluar" type="Area2D" parent="Tilemap" unique_id=917895610]
+position = Vector2(0, 72)
+script = ExtResource("5_ybhwf")
+target_map = "desa_uji"
+target_spawn = "hokage_door"
+
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/PintuKeluar" unique_id=1359489186]
+shape = SubResource("RectangleShape2D_kaamj")
+
+[node name="DokterZahra" type="CharacterBody2D" parent="Tilemap" unique_id=1738298581 instance=ExtResource("6_athe0")]
+position = Vector2(40, -24)
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("7_ttl5l")
+npc_id = "dokter_zahra"
+dialog_id = "zahra_sembuhkan"
+team = ExtResource("8_3hxwq")
+
+[node name="EnvironmentArea" type="Area2D" parent="." unique_id=952003817]
+unique_name_in_owner = true
+visible = false
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+script = ExtResource("9_y4lhj")
+metadata/_edit_lock_ = true
+
+[node name="Latar" type="ColorRect" parent="." unique_id=1927296776]
+z_index = -20
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+color = Color(0.0784314, 0.105882, 0.105882, 1)

@@ -20,7 +20,8 @@ signal teleported
 			await ready
 		if actor:
 			actor.queue_free()
-		actor = actor_scene.instantiate()
+		if actor_scene:
+			actor = actor_scene.instantiate()
 
 @export var team:ResourceDamageTeam:
 	set(v):
