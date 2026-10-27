@@ -41,6 +41,7 @@ var ghost_timer := 0.0
 func _ready() -> void:
 	add_to_group("player")
 	set_collision_layer_value(PLAYER_LAYER,true)
+	hitbox.team = team
 	hitbox.damage_received.connect(on_damage_received)
 	weapon.team = team
 	weapon.resource_weapon = weapon_resource

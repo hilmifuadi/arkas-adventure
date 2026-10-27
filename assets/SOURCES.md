@@ -70,3 +70,10 @@ Scene tokoh ada di `content/characters/<nama>/<nama>.tscn`.
 | `audio/sfx/faint.wav`, `success.wav` | `Jingles/Secret1.wav`, `Success1.wav` |
 
 Pilihan SFX/musik berdasarkan judul berkas; **belum didengarkan** (uji telinga di Fase 8).
+
+## Peta uji dan prop buatan skrip
+
+- `tools/build_maps.gd` membangun `content/acts/act01/map_desa_uji.tscn` dan `map_rumah_hokage.tscn`
+  dari tileset proyek (`content/map/tileset.tres`: rumah/pohon dari `TilesetVillageAbandoned`, lantai dari
+  `TilesetFloor` dan `TilesetInterior`, dinding dari `TilesetWallSimple`). Peta bisa dibuka dan disunting di editor.
+- `tools/gen_props.py` membuat `assets/generated/props/training_dummy.png` (boneka latihan jerami, palet pack).

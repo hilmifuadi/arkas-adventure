@@ -15,6 +15,10 @@ const HEARTS_EASY := 8
 
 var current_act := 1
 var current_map := ""
+var current_spawn := ""
+var player_position := Vector2.ZERO
+## True hanya sesaat setelah Lanjutkan: World memakai player_position, bukan titik muncul.
+var restore_position := false
 var flags := {}
 var inventory := {}
 var party:Array[String] = ["arka"]
@@ -25,6 +29,9 @@ var hearts_max := 5
 func reset() -> void:
 	current_act = 1
 	current_map = ""
+	current_spawn = ""
+	player_position = Vector2.ZERO
+	restore_position = false
 	flags = {}
 	inventory = {}
 	party = ["arka"]
@@ -96,6 +103,8 @@ func to_dict() -> Dictionary:
 		"version": SAVE_VERSION,
 		"current_act": current_act,
 		"current_map": current_map,
+		"current_spawn": current_spawn,
+		"player_position": [player_position.x, player_position.y],
 		"flags": flags,
 		"inventory": inventory,
 		"party": party,
@@ -108,6 +117,11 @@ func from_dict(data:Dictionary) -> void:
 	reset()
 	current_act = data.get("current_act", current_act)
 	current_map = data.get("current_map", current_map)
+	current_spawn = data.get("current_spawn", current_spawn)
+	var position_data:Array = data.get("player_position", [])
+	if position_data.size() == 2:
+		player_position = Vector2(position_data[0], position_data[1])
+		restore_position = true
 	flags = data.get("flags", flags)
 	inventory = data.get("inventory", inventory)
 	party.assign(data.get("party", party))

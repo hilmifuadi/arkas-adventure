@@ -17,6 +17,7 @@ var hiding := false
 
 func _ready() -> void:
 	add_to_group("npc")
+	$Hitbox.team = team
 	if npc_id != "":
 		add_to_group("npc_"+npc_id)
 	sprite.direction = start_direction

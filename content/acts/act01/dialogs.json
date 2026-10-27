@@ -168,5 +168,25 @@
 				"end": true
 			}
 		]
+	},
+	"zahra_bangun": {
+		"lines": [
+			{
+				"speaker": "dokter_zahra",
+				"text": "DLG_BANGUN_ZAHRA",
+				"emote": "worried"
+			},
+			{
+				"speaker": "arka",
+				"text": "DLG_BANGUN_ARKA",
+				"emote": "dizzy"
+			},
+			{
+				"speaker": "dokter_zahra",
+				"text": "DLG_BANGUN_SEHAT",
+				"emote": "smile",
+				"end": true
+			}
+		]
 	}
 }
