@@ -39,8 +39,8 @@
   Caranya: recolor palet pack (dipisah kepala/badan) + aksesori piksel yang ditempel relatif terhadap
   kepala tiap frame sehingga ikut arah dan animasi jalan. Sumber sprite dicatat di `assets/SOURCES.md`.
 - Empat protagonis dibedakan lewat **warna utama dan siluet**: Arka hijau daun + ikat kepala oranye + gagang/sarung
-  katana; Bida biru tua + kacamata bulat + kuncir + gulungan; Nadiya merah + sanggul tinggi berikat kuning + bandolir;
-  Farah kuning + goggle di dahi + ransel abu dengan antena. Hasil sheet bisa dilihat dengan
+  katana; Bida biru tua + tudung ninja + kacamata bulat + gulungan; Nadiya merah + tudung ninja dengan pita kuning + bandolir;
+  Farah kuning + tudung ninja + goggle di dahi + ransel abu dengan antena; Dokter Zahra hijab biru muda + jas putih (lihat pembaruan hijab di bawah). Hasil sheet bisa dilihat dengan
   `python tools/gen_characters.py --preview out.png`.
 - Scene tokoh ada di `content/characters/<nama>/<nama>.tscn` (memakai `Character`/`SpriteCharacter` bawaan).
   Ibu Sari memakai `Villager4` dari pack apa adanya (`assets/characters/ibu_sari`).
@@ -161,3 +161,18 @@ kesulitan perlu dicoba langsung oleh pengguna.
 - Warning sub-emitter hujan/salju di Compatibility masih ada (lihat butir 0).
 
 > **Peringatan:** `tools/playtest_e2e.gd` dan `tools/shots_ui.gd` menghapus simpanan slot 1 di `user://` (folder data pengguna Godot untuk proyek ini) agar uji mulai bersih. Jangan jalankan bila ada simpanan yang ingin dipertahankan.
+
+## Pembaruan: hijab dan tudung ninja (keputusan pengguna)
+
+- **Dokter Zahra berhijab** (biru muda lembut + jas putih dengan palang merah); **Bida, Nadiya, Farah bertudung ninja**
+  (kain menutup kepala dan leher, jatuh membentuk segitiga kecil di dada, ujung kain berkibar). Arka dan Pak Hilmi tidak berubah.
+- `tools/gen_characters.py` diubah: fungsi `neck_cloth()` dan `cloth_tail()` dipakai semua tokoh perempuan di **seluruh arah dan
+  baris animasi jalan/serang** (baris lompat dan pose khusus hanya di-recolor); kuncir Bida dan sanggul Nadiya dihapus.
+  Ciri khas tiap tokoh dipertahankan: Bida biru tua + kacamata bulat; Nadiya merah + bandolir + pita kuning di sisi tudung;
+  Farah kuning + goggle di dahi di atas tudung + ransel antena; Zahra rambut pirang diganti kain hijab biru muda.
+- Faceset keempatnya ikut diubah (tepi kain di dahi/leher, pita Nadiya, hijab Zahra). Bagian belakang kepala tetap utuh
+  karena kain hanya menimpa piksel yang sudah buram (tidak menambah di luar siluet).
+- Dokumen yang diperbarui: `docs/story_bible.md` (3.1 panduan tampilan, 3.2 Dokter Zahra), `docs/RENCANA_PENGERJAAN.md`,
+  `assets/SOURCES.md`. `docs/act01_desain.md` tidak menyebut tampilan tokoh sehingga tidak berubah.
+- Screenshot sprite: `docs/fase2_screenshots/16_sprite_tokoh.png` (semua tokoh, 4 arah, semua baris animasi, plus faceset).
+  Seluruh screenshot dalam game diambil ulang setelah perubahan ini.

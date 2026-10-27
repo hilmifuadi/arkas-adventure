@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Buat sprite sheet dan faceset tokoh Fase 2 dari sprite "Ninja Adventure - Asset Pack".
+"""Buat sprite sheet dan faceset tokoh Fase 2 (Bida, Nadiya, Farah, Dokter Zahra berhijab/tudung ninja) dari sprite "Ninja Adventure - Asset Pack".
 
 Deterministik (tanpa angka acak). Hanya butuh Python 3 + Pillow. Hasil:
   assets/generated/characters/<nama>/SpriteSheet.png   64x112 (4 arah x 7 baris, format sama dengan pack)
@@ -107,6 +107,32 @@ def side_sign(direction):
 
 # ---------------------------------------------------------------- fitur per tokoh
 
+def neck_cloth(cell, top, cx, color, trim, wide=5):
+    """Kain tudung/hijab yang menutup leher dan jatuh membentuk segitiga kecil di dada.
+    Dua baris pertama melebar, baris ketiga menyempit; garis tepi (trim) memberi kesan lipatan."""
+    rows = ((top + 9, wide, trim), (top + 10, wide - 1, color), (top + 11, max(wide - 3, 1), color))
+    for y, half, edge in rows:
+        for x in range(cx - half + 1, cx + half + 1):
+            if is_opaque(cell, x, y) and cell.getpixel((x, y)) != OUTLINE:
+                cell.putpixel((x, y), edge if x in (cx - half + 1, cx + half) else color)
+
+
+def cloth_tail(cell, d, top, cx, color, shade):
+    """Ujung kain tudung yang berkibar di belakang kepala (terlihat dari belakang dan samping)."""
+    s = side_sign(d)
+    if d == UP:
+        for i in range(4):
+            put(cell, cx + 1 + (i // 2), top + 6 + i, color if i % 2 == 0 else shade, over=True)
+        put(cell, cx + 1, top + 10, shade)
+    elif d in (LEFT, RIGHT):
+        put(cell, cx + 6 * s, top + 5, color)
+        put(cell, cx + 7 * s, top + 6, shade)
+        put(cell, cx + 7 * s, top + 7, color)
+    else:
+        put(cell, cx + 6, top + 8, shade)
+
+
+
 def arka_features(cell, d, top, cx, row):
     band, band_hi = rgb("f08a1e"), rgb("ffc247")
     span = opaque_span(cell, top + 5)
@@ -159,69 +185,63 @@ def bida_features(cell, d, top, cx, row):
         put(cell, fx - 2 * s, eye_y, rim)
         put(cell, fx - 2 * s, eye_y + 1, rim)
         put(cell, fx - s, eye_y, glint)
-    # kuncir: menggantung di belakang kepala (terlihat jelas dari belakang dan samping)
-    hair, hair_hi = rgb("1a2a55"), rgb("3a58a8")
-    if d == UP:
-        for i in range(7):
-            put(cell, cx, top + 3 + i, hair)
-            put(cell, cx + 1, top + 3 + i, hair_hi)
-        put(cell, cx - 1, top + 3, OUTLINE)
-        put(cell, cx + 2, top + 3, OUTLINE)
-    elif d in (LEFT, RIGHT):
-        for i in range(5):
-            put(cell, cx + 6 * s - s * (i // 3), top + 4 + i, hair)
-        put(cell, cx + 7 * s, top + 4, OUTLINE)
-    else:
-        put(cell, cx + 6, top + 9, hair)
-        put(cell, cx + 6, top + 10, hair)
+    # tudung ninja biru tua: kain menutup leher, ujungnya berkibar, garis tepi biru muda
+    cloth, trim, shade = rgb("2f4ea0"), rgb("4a6cc0"), rgb("23366e")
+    neck_cloth(cell, top, cx, cloth, trim)
+    cloth_tail(cell, d, top, cx, cloth, shade)
     # gulungan strategi di punggung
     paper, rod = rgb("f1e4c0"), rgb("8a5a2b")
     if d == UP:
         for i in range(5):
-            put(cell, cx - 3 + i, top + 10 + i // 2 * 1, paper)
-        put(cell, cx - 4, top + 10, rod)
-        put(cell, cx + 2, top + 12, rod)
+            put(cell, cx - 3 + i, top + 12 + i // 3, paper)
+        put(cell, cx - 4, top + 12, rod)
+        put(cell, cx + 2, top + 13, rod)
     elif d in (LEFT, RIGHT):
-        put(cell, cx + 4 * s, top + 10, paper)
-        put(cell, cx + 4 * s, top + 11, rod)
+        put(cell, cx + 4 * s, top + 11, paper)
+        put(cell, cx + 4 * s, top + 12, rod)
 
 
 def nadiya_features(cell, d, top, cx, row):
-    hair, hair_hi, tie = rgb("5a2c1c"), rgb("8a4a2a"), rgb("ffd23c")
-    # ikat rambut tinggi (sanggul/kuncir di puncak kepala)
-    shift = 0 if d in (DOWN, UP) else -side_sign(d) * 1
-    for dx, color in ((-1, hair), (0, hair_hi), (1, hair)):
-        put(cell, cx + shift + dx, top - 1, color)
-    put(cell, cx + shift, top - 2, hair)
-    put(cell, cx + shift + 1, top - 2, hair_hi)
-    put(cell, cx + shift - 1, top - 2, OUTLINE)
-    put(cell, cx + shift + 2, top - 2, OUTLINE)
-    put(cell, cx + shift - 2, top - 1, OUTLINE)
-    put(cell, cx + shift + 2, top - 1, OUTLINE)
-    put(cell, cx + shift, top, tie)
-    put(cell, cx + shift - 1, top, tie)
+    # tudung ninja merah: ujung kain berkibar (tuft bawaan sprite), pita kuning di sisi tudung
+    cloth, trim, shade, pin = rgb("e8364c"), rgb("f0566a"), rgb("a62e48"), rgb("ffd23c")
+    neck_cloth(cell, top, cx, cloth, trim)
+    cloth_tail(cell, d, top, cx, cloth, shade)
+    if d == DOWN:
+        put(cell, cx - 6, top + 4, pin)
+        put(cell, cx - 6, top + 5, pin)
+    elif d == UP:
+        put(cell, cx - 3, top + 3, pin)
+        put(cell, cx - 2, top + 3, pin)
+    else:
+        s = side_sign(d)
+        put(cell, cx + 2 * s, top + 3, pin)
+        put(cell, cx + 3 * s, top + 3, pin)
     # bandolir: tali menyilang di dada dengan shuriken kecil
     strap, metal = rgb("4a2c1a"), rgb("ffd23c")
     if d == DOWN:
         for i in range(6):
-            put(cell, cx - 3 + i, top + 9 + i * 4 // 6, strap)
-        put(cell, cx - 1, top + 10, metal)
-        put(cell, cx + 1, top + 11, metal)
+            put(cell, cx - 3 + i, top + 10 + i * 4 // 6, strap)
+        put(cell, cx - 1, top + 11, metal)
+        put(cell, cx + 1, top + 12, metal)
     elif d == UP:
         for i in range(6):
-            put(cell, cx + 2 - i, top + 9 + i * 4 // 6, strap)
+            put(cell, cx + 2 - i, top + 10 + i * 4 // 6, strap)
     else:
         s = side_sign(d)
-        put(cell, cx - 1 * s, top + 9, strap)
-        put(cell, cx, top + 10, strap)
-        put(cell, cx + 1 * s, top + 11, strap)
-        put(cell, cx, top + 10, metal)
+        put(cell, cx - 1 * s, top + 10, strap)
+        put(cell, cx, top + 11, strap)
+        put(cell, cx + 1 * s, top + 12, strap)
+        put(cell, cx, top + 11, metal)
 
 
 def farah_features(cell, d, top, cx, row):
     rim, glass, glint, strap = rgb("2d3b52"), rgb("62d6ee"), rgb("ffffff"), rgb("3a2a22")
     s = side_sign(d)
-    # goggle di dahi + tali
+    # tudung ninja kuning: menutup leher, ujung kain berkibar
+    cloth, trim, shade = rgb("ffd84a"), rgb("fff1a0"), rgb("f2a62a")
+    neck_cloth(cell, top, cx, cloth, trim)
+    cloth_tail(cell, d, top, cx, cloth, shade)
+    # goggle di dahi (di atas tudung) + tali
     span = opaque_span(cell, top + 3)
     if span and d != UP:
         paint_row(cell, top + 4, span[0], span[1], strap)
@@ -292,20 +312,20 @@ def hilmi_features(cell, d, top, cx, row):
 
 
 def zahra_features(cell, d, top, cx, row):
-    red, white = rgb("e0394c"), rgb("f4f7fb")
+    red = rgb("e0394c")
+    # hijab biru muda yang lembut: menutup kepala dan leher, jatuh di dada, ujungnya berkibar
+    cloth, trim, shade = rgb("b0d0e8"), rgb("cfe3f3"), rgb("86aed0")
+    neck_cloth(cell, top, cx, cloth, trim, wide=6)
+    cloth_tail(cell, d, top, cx, cloth, shade)
     if d == DOWN:
-        # palang kesehatan di dada jas
+        # palang kesehatan di dada jas putih (di bawah hijab)
         for dx in (-1, 0, 1):
-            put(cell, cx + dx, top + 11, red)
-        put(cell, cx, top + 10, red)
+            put(cell, cx + dx, top + 13, red)
         put(cell, cx, top + 12, red)
+        put(cell, cx, top + 14, red)
     elif d in (LEFT, RIGHT):
-        put(cell, cx, top + 11, red)
-        put(cell, cx, top + 12, red)
-    # stetoskop kecil di leher
-    if d == DOWN:
-        put(cell, cx - 3, top + 9, rgb("3a3f4a"))
-        put(cell, cx + 3, top + 9, rgb("3a3f4a"))
+        put(cell, cx, top + 13, red)
+        put(cell, cx, top + 14, red)
 
 
 # ---------------------------------------------------------------- definisi tokoh
@@ -342,7 +362,7 @@ CHARACTERS = {
             rgb("543c52"): rgb("5d2a40"),
         },
         "body": {},
-        "tuft": {rgb("8f3e56"): rgb("ffd23c"), rgb("e0394c"): rgb("ffe27a")},
+        "tuft": {rgb("8f3e56"): rgb("c43a56"), rgb("e0394c"): rgb("f0566a")},
         "features": nadiya_features,
     },
     "farah": {
@@ -372,6 +392,8 @@ CHARACTERS = {
         "map": {
             rgb("79b8ce"): rgb("f1f4f8"),   # baju biru -> jas putih
             rgb("548789"): rgb("c4ccd8"),
+            rgb("f1c471"): rgb("b0d0e8"),   # rambut pirang terang -> hijab biru muda
+            rgb("d78b4a"): rgb("86aed0"),   # rambut pirang gelap -> bayangan hijab
         },
         "body": {},
         "tuft": {},
@@ -394,7 +416,10 @@ FACE_MAPS = {
         rgb("f1c471"): rgb("ffd84a"), rgb("d78b4a"): rgb("f2a62a"), rgb("e0394c"): rgb("f2a62a"),
     },
     "pak_hilmi": {rgb("d3a2c0"): rgb("e8e0e6")},
-    "dokter_zahra": {rgb("79b8ce"): rgb("f1f4f8"), rgb("548789"): rgb("c4ccd8")},
+    "dokter_zahra": {
+        rgb("79b8ce"): rgb("f1f4f8"), rgb("548789"): rgb("c4ccd8"),
+        rgb("f1c471"): rgb("b0d0e8"), rgb("d78b4a"): rgb("86aed0"),
+    },
 }
 
 
@@ -440,21 +465,14 @@ def face_overlay(name, img):
         fill(img, 18, 16, 19, 16, rgb("d6ecff"))
         fill(img, 11, 16, 12, 18, rgb("ffffff"))
         fill(img, 22, 16, 23, 18, rgb("ffffff"))
-        # kuncir di sisi kanan
-        fill(img, 31, 14, 33, 30, rgb("1a2a55"))
-        fill(img, 32, 14, 32, 30, rgb("3a58a8"))
+        # tudung ninja biru tua: garis tepi kain di atas dan kain menutup leher
+        fill(img, 8, 8, 30, 8, rgb("4a6cc0"))
+        fill(img, 9, 29, 29, 29, rgb("4a6cc0"))
     elif name == "nadiya":
-        # ikat rambut tinggi: sanggul bulat + ikatan kuning di puncak kepala
-        for y in range(0, 9):
-            for x in range(13, 27):
-                if (x - 19.5) ** 2 + (y - 3.5) ** 2 <= 14:
-                    img.putpixel((x, y), rgb("5a2c1c") if (x + y) % 7 else rgb("8a4a2a"))
-        fill(img, 17, 2, 19, 3, rgb("8a4a2a"))
-        fill(img, 15, 8, 24, 9, rgb("ffd23c"))
-        fill(img, 15, 9, 24, 9, rgb("e6a817"))
-        # ekor rambut melengkung ke kiri
-        for pt in ((13, 4), (12, 5), (11, 6), (11, 7), (12, 8)):
-            fill(img, pt[0], pt[1], pt[0], pt[1] + 1, rgb("5a2c1c"))
+        # tudung ninja merah: garis tepi kain dan pita kuning di sisi tudung
+        fill(img, 8, 9, 30, 9, rgb("f0566a"))
+        fill(img, 7, 12, 8, 17, rgb("ffd23c"))
+        fill(img, 8, 13, 8, 16, rgb("e6a817"))
         # bandolir di dada
         for i in range(24):
             put_img(img, 6 + i, 29 + i // 3, rgb("4a2c1a"))
@@ -462,7 +480,9 @@ def face_overlay(name, img):
         for pt in ((12, 32), (19, 35), (25, 37)):
             fill(img, pt[0], pt[1], pt[0] + 1, pt[1] + 1, rgb("ffd23c"))
     elif name == "farah":
-        # goggle di dahi
+        # tudung ninja kuning: tepi kain di dahi, kain menutup leher; goggle dipakai di atas tudung
+        fill(img, 6, 12, 32, 12, rgb("fff1a0"))
+        fill(img, 8, 30, 30, 30, rgb("fff1a0"))
         fill(img, 5, 6, 33, 7, rgb("3a2a22"))
         ring(img, 12, 8, 5, rgb("2d3b52"))
         ring(img, 25, 8, 5, rgb("2d3b52"))
@@ -478,9 +498,12 @@ def face_overlay(name, img):
         fill(img, 17, 5, 20, 8, rgb("f5c542"))
         fill(img, 18, 6, 19, 7, rgb("d6283c"))
     elif name == "dokter_zahra":
-        # palang di kerah jas putih
-        fill(img, 17, 32, 20, 37, rgb("e0394c"))
-        fill(img, 15, 34, 22, 35, rgb("e0394c"))
+        # hijab menutup leher dan jatuh di dada; palang merah di jas putih
+        fill(img, 9, 29, 29, 33, rgb("b0d0e8"))
+        fill(img, 9, 29, 29, 29, rgb("cfe3f3"))
+        fill(img, 14, 34, 24, 37, rgb("b0d0e8"))
+        fill(img, 18, 35, 19, 37, rgb("e0394c"))
+        fill(img, 17, 36, 20, 36, rgb("e0394c"))
 
 
 # ---------------------------------------------------------------- penyusunan

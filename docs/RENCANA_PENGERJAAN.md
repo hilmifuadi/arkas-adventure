@@ -141,8 +141,8 @@ Path relatif terhadap `Ninja Adventure - Asset Pack\Ninja Adventure - Asset Pack
 | Kebutuhan | Basis di pack | Perlu diubah? |
 |---|---|---|
 | **Arka (L)** | `Actor/Character/NinjaGreen` atau `NinjaRed`, + senjata `Items/Weapons/Katana` (opsional `CharacterAnimated/NinjaGreen` untuk roll/climb) | Recolor + ikat kepala; faceset khas |
-| **Bida (P)** | `NinjaBlue` / `NinjaBlue2` | Kacamata, kuncir, gulungan; faceset |
-| **Nadiya (P)** | `NinjaRed2` / `NinjaYellow` | Busur/ransel kunai, ikat rambut; faceset |
+| **Bida (P)** | `NinjaBlue` / `NinjaBlue2` | Tudung ninja biru tua, kacamata, gulungan; faceset |
+| **Nadiya (P)** | `NinjaRed2` / `NinjaYellow` | Busur/ransel kunai, tudung ninja merah dengan pita; faceset |
 | **Farah (P)** | `NinjaYellow` / `NinjaBomb` | Goggle, ransel gadget; faceset |
 | **Pak Hilmi** | `Master` / `OldMan2` / `Monk` | Topi/jubah Hokage; faceset |
 | **Dokter Zahra** | `Woman` / `Princess` | Jas putih, ikon palang; faceset |

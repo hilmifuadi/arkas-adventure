@@ -54,15 +54,17 @@ Versi Inggris memakai nama yang sama; istilah dijelaskan lewat konteks dialog. "
 | Tokoh | Warna utama | Ciri khas (siluet) |
 |---|---|---|
 | Arka | Hijau daun + ikat kepala oranye | Katana di punggung, rambut mencuat |
-| Bida | Biru tua | Kacamata bulat, kuncir, gulungan strategi di punggung |
-| Nadiya | Merah | Ikat rambut tinggi, bandolir shuriken/kunai |
-| Farah | Kuning | Goggle di dahi, ransel penuh antena dan alat |
+| Bida | Biru tua | **Tudung ninja** menutup kepala dan leher (ujung kain berkibar), kacamata bulat, gulungan strategi di punggung |
+| Nadiya | Merah | **Tudung ninja** merah dengan pita kuning di sisi tudung dan ujung kain berkibar, bandolir shuriken/kunai |
+| Farah | Kuning | **Tudung ninja** kuning, goggle dipakai di dahi di atas tudung, ransel penuh antena dan alat |
+
+Keputusan tampilan (pengguna): **Bida, Nadiya, dan Farah berhijab atau bertudung ninja** (kain penutup kepala dan leher ala ninja, sesuai gaya tiap tokoh); **Dokter Zahra berhijab** (lihat 3.2). Arka dan Pak Hilmi tidak berubah. Tidak ada penyebutan kuncir atau ikat rambut untuk tokoh perempuan; detail tambahan memakai ujung tudung yang berkibar, pita di sisi tudung, dan garis tepi kain.
 
 ### 3.2 Tokoh pendukung
 | Tokoh | Peran | Sifat lucu | Fungsi |
 |---|---|---|---|
 | **Hokage Pak Hilmi** | Pemimpin bijak; menyimpan rahasia tentang Kuro dan Mesin | Takut ayam (bersembunyi saat mendengar kokok) | Mentor, sumber informasi, penghubung sejarah desa |
-| **Dokter Zahra** | Membantu memimpin Desa Daun, dokter desa | Keibuan dan lembut, takut serangga | **Menyembuhkan rombongan setiap kali mereka datang ke rumah Hokage dan berinteraksi dengannya** |
+| **Dokter Zahra** | Membantu memimpin Desa Daun, dokter desa; **berhijab** biru muda yang lembut dengan jas putih berlambang palang | Keibuan dan lembut, takut serangga | **Menyembuhkan rombongan setiap kali mereka datang ke rumah Hokage dan berinteraksi dengannya** |
 | **Kuro** | Antagonis: dulu murid berbakat yang ikut membangun Mesin; proyek dihentikan setelah kecelakaan, ia merasa dikhianati | Tetap manusiawi (lihat usulan di 3.3) | Berubah dari lawan menjadi sekutu yang memperbaiki desa |
 
 ### 3.3 [USULAN] Kuro yang manusiawi
