@@ -6,3 +6,7 @@
 
 # Web export output (built locally, deployed to GitHub Pages)
 build/
+
+# Python
+__pycache__/
+*.pyc
