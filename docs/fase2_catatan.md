@@ -189,3 +189,38 @@ kesulitan perlu dicoba langsung oleh pengguna.
 - `docs/story_bible.md` 3.2: catatan panggilan + tiga opsi hubungan ditandai **[USULAN]** (anak kandung / anak asuh / murid yang
   dianggap anak), tidak diputuskan; keselarasan dengan tema Arka dan hubungan Pak Hilmi-Kuro dicatat. `docs/act01_desain.md`:
   baris Arka di S2 dan S6 ditambahkan, serta catatan panggilan di bagian 12.3.
+
+## Pembaruan: hubungan keluarga = anak kandung (keputusan pengguna)
+
+- Pengguna memutuskan **anak kandung**. Tafsir yang dipakai (bisa dikoreksi): **Arka, Bida, Nadiya, Farah adalah anak kandung Pak Hilmi
+  dan Dokter Zahra, jadi bersaudara dan rekan tim**; usia/urutan lahir belum ditentukan. Ini **perubahan dari brief** (brief menyebut
+  "tiga teman perempuan"). Dicatat di `docs/story_bible.md` 2.1 dan 3.2 (tiga opsi [USULAN] lama diganti keputusan + dampak:
+  Arka bercita-cita seperti ayahnya, Pak Hilmi tidak memberi keistimewaan, tim = keluarga, Kuro melihat Arka sebagai "anak sang guru"
+  di Act 8 tanpa mengubah motivasinya), `docs/act01_desain.md` (S2 dan catatan 12.3), `docs/RENCANA_PENGERJAAN.md` (keputusan 7-8), `README.md`.
+- Dialog uji: Pak Hilmi dan Dokter Zahra kini boleh menyebut diri "Ayah"/"Mamah"; gurauan ringan baru: "Ramen gratis itu urusan Hokage.
+  Dan Hokage tidak pilih kasih, termasuk pada anak sendiri." (ID/EN), serta Zahra: "Mamah catat resepnya." Dialog antar-saudara tidak diubah.
+  Di S2 (desain): Pak Hilmi "tidak ada jalur khusus untuk anak Hokage" dan balasan Arka.
+
+## Pembaruan: HUD objektif ringkas
+
+- Objektif kini **satu baris kecil** (font 18 px layar = setengah ukuran sebelumnya, tetap kelipatan 9 agar font piksel tajam; 27 px bila
+  ukuran teks Besar), **lebar menyesuaikan teks**, latar semi-transparan (60%), rapat di bawah baris hati kiri atas, **lebar maksimum
+  40% layar** (teks panjang EN dibungkus). Lapisan terpisah dari hati (tanpa skala 4x).
+- Perilaku: tampil penuh saat objektif berubah, memudar ke 25% setelah 4 detik; **tahan tombol `objective`** (O / Back gamepad) untuk
+  menampilkannya penuh lagi. Tidak bentrok dengan kotak dialog (di bawah) maupun tombol Lewati (kanan atas).
+- Input baru `objective` di `project.godot`. **Back (gamepad) sebelumnya dipakai `scratchpad`; saya pindahkan kertas coretan ke R3**
+  (tekan stik kanan) karena fitur itu baru dibangun di Fase 5. Keyboard `scratchpad` tetap Tab. README diperbarui.
+- Diuji `tools/playtest_hud.gd` (8 pemeriksaan); screenshot `20_hud_objektif_id`, `21_hud_objektif_pudar`, `22_hud_objektif_en`.
+
+## Pembaruan: akar masalah "pohon tidak sempurna" setelah pot/peti hancur
+
+- **Akar masalah (di `tools/build_maps.gd`, bukan di Destroyable):** pot dan peti diletakkan sebagai *scene tile* pada lapisan `Wall`,
+  di petak yang **sama dengan petak pohon**. `TileMap.set_cell` menimpa petak itu, jadi pohon kehilangan petak bawahnya; ketika pot
+  hancur, bagian pohon yang tertimpa tetap hilang (terlihat sebagai pohon bertakik). Masalah kedua dari penyebab serupa: blok pohon
+  lebar 4 petak diletakkan dengan **jarak 3 petak**, sehingga pohon yang berdampingan saling memotong (garis potong vertikal di tepi
+  pohon); beberapa pohon juga melewati tepi layar/batas ruang kamera.
+- **Perbaikan:** pohon berjarak minimal 4 petak, tidak melintasi batas ruang kamera (x 10|11) maupun tepi layar (pohon bawah dipindah
+  ke y=3..5 dan jalan tanah naik ke y=1..2); pot/peti dipindah ke petak kosong. `build_maps.gd` kini **mencatat petak lapisan Wall
+  (`claim`) dan gagal (exit 1) bila ada objek menimpa objek lain**, sehingga masalah ini tidak terulang. Peta di-build ulang: 0 tumpang tindih.
+- Screenshot sebelum/sesudah: `17_pot_pohon_LAMA_sebelum/sesudah.png` dan `18_pot_pohon_BARU_sebelum/sesudah.png`
+  (dibuat `tools/shots_destroy.gd`). Peta sample bawaan `map_village.tscn` tidak dipakai lagi dan tidak diubah.

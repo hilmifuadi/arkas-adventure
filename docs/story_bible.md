@@ -20,9 +20,9 @@
 |---|---|
 | Desa | **Desa Daun** (jangan "Konoha", jangan "Leaf Village" di versi Inggris) |
 | Pemeran utama | **Arka** (L) |
-| Pendamping | **Bida** (P), **Nadiya** (P), **Farah** (P) |
-| Pemimpin desa | **Hokage Pak Hilmi** |
-| Istri Hokage | **Dokter Zahra** |
+| Saudara dan rekan tim Arka | **Bida** (P), **Nadiya** (P), **Farah** (P) (anak kandung Hokage dan Dokter Zahra) |
+| Pemimpin desa | **Hokage Pak Hilmi** (ayah Arka, Bida, Nadiya, Farah) |
+| Istri Hokage | **Dokter Zahra** (ibu Arka, Bida, Nadiya, Farah) |
 | Antagonis | **Kuro** |
 | Mesin kuno | **Mesin Keseimbangan Desa** |
 | Proyek antagonis | **Proyek Hokage Abadi** |
@@ -69,12 +69,23 @@ Keputusan tampilan (pengguna): **Bida, Nadiya, dan Farah berhijab atau bertudung
 
 **Panggilan keluarga (keputusan pengguna):** Arka, Bida, Nadiya, dan Farah memanggil Pak Hilmi **"Ayah"** dan Dokter Zahra **"Mamah"** dalam percakapan sehari-hari (EN sementara: "Dad" / "Mom"; bisa diganti). Warga lain, narasi, dan nama pembicara di dialog tetap "Hokage Pak Hilmi" dan "Dokter Zahra"; nama baku di brief tidak berubah.
 
-**[USULAN] Hubungan keluarganya belum ditentukan pengguna.** Opsi (jangan dianggap keputusan):
-- **A. Anak kandung** Pak Hilmi dan Dokter Zahra (Arka) dan anak-anak lain dianggap saudara/sahabat keluarga. Tema Arka ("Hokage itu terkenal dan dapat ramen gratis" → melayani warga) menjadi juga soal melanjutkan jejak ayahnya.
-- **B. Anak asuh** keluarga Hokage: keempatnya dibesarkan di rumah Hokage. Cocok dengan tim yang saling menjaga dan dengan rumah Hokage sebagai tempat pulang/pemulihan.
-- **C. Murid yang dianggap anak:** panggilan "Ayah/Mamah" tumbuh dari kedekatan murid-guru. Paling mudah selaras dengan masa lalu Pak Hilmi sebagai guru di akademi.
+**Keputusan pengguna: hubungan keluarga = anak kandung.** Tafsir yang dipakai (bisa dikoreksi): **Arka, Bida, Nadiya, dan Farah adalah
+anak kandung Hokage Pak Hilmi dan Dokter Zahra, jadi bersaudara dan sekaligus rekan tim.** Usia dan urutan lahir belum ditentukan
+**[USULAN]** (jangan ditetapkan dulu). **Perubahan dari brief yang disetujui:** brief asli menyebut Bida, Nadiya, Farah sebagai
+"tiga teman perempuan" Arka; mulai sekarang mereka **saudara dan rekan tim**.
 
-Catatan keselarasan: (1) Hubungan Pak Hilmi dengan **Kuro** tetap sebagai **murid di akademi**; pada opsi A/B, Kuro bisa dipandang "murid yang tidak pernah dipanggil anak" sehingga rasa dikhianatinya makin dimengerti, tanpa mengubah motivasi yang sudah dikunci di 4.1. (2) Tema Arka tidak bertabrakan: ketenaran dan ramen gratis tetap motivasi awal; "Ayah" yang melayani warga menjadi teladan yang pelan-pelan ia pahami. (3) Dokter Zahra tetap "istri Hokage" seperti di tabel nama baku.
+Dampak ringkas:
+- **Arka** bercita-cita menjadi Hokage seperti ayahnya, tetapi tetap lucu: ia mengira Hokage itu terkenal dan dapat ramen gratis,
+  padahal sehari-hari ayahnya melayani warga. Tema perkembangan Arka (3.1) jadi juga soal memahami pekerjaan ayahnya.
+- **Pak Hilmi sengaja tidak memberi keistimewaan** pada anak-anaknya di ujian (humor dan tema pemimpin yang adil).
+- **Tim adalah keluarga**: kerja sama dan saling mendengarkan menjadi tema keluarga. Dialog antar-saudara tetap akrab ala rekan tim
+  (boleh memanggil nama); kalimat khas tiap tokoh tidak berubah.
+- **Pak Hilmi dan Dokter Zahra** bersikap sebagai orang tua sekaligus pemimpin desa; Dokter Zahra menyembuhkan keluarganya di rumah
+  Hokage (rumah mereka sendiri).
+- **Kuro** (murid Pak Hilmi di akademi yang kini merasa ditinggalkan gurunya) makin kuat sebagai tokoh: di Act 8 ia bisa melihat Arka
+  sebagai "anak sang guru" dan membandingkan nasibnya. Motivasi Kuro di brief dan 4.1 **tidak berubah**.
+- Panggilan: keempat anak memanggil Pak Hilmi **"Ayah"** dan Dokter Zahra **"Mamah"** (EN sementara "Dad" / "Mom"); warga lain dan
+  narasi tetap "Hokage Pak Hilmi" dan "Dokter Zahra", nama pembicara di dialog tidak berubah.
 
 ### 3.3 [USULAN] Kuro yang manusiawi
 Supaya Kuro tidak jadi penjahat satu dimensi:

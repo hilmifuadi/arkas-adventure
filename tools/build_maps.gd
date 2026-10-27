@@ -37,6 +37,10 @@ var map_root:Node2D  # akar peta (skrip Map; properti lewat set() karena skrip b
 var tilemap:TileMap
 var tileset:TileSet
 var rng := RandomNumberGenerator.new()
+## Petak lapisan Wall yang sudah terisi (petak -> label). Dipakai agar blok pohon/rumah dan benda
+## (pot, peti, rumput: scene tile) tidak saling menimpa; penimpaan membuat pohon tampak terpotong.
+var claimed := {}
+var conflicts := 0
 
 
 func _initialize() -> void:
@@ -44,8 +48,8 @@ func _initialize() -> void:
 	tileset = load("res://content/map/tileset.tres")
 	build_outdoor()
 	build_interior()
-	print("build_maps: selesai")
-	quit()
+	print("build_maps: selesai, %d tumpang tindih" % conflicts)
+	quit(1 if conflicts > 0 else 0)
 
 
 # ------------------------------------------------------------------ bantuan
@@ -56,6 +60,7 @@ func new_map(map_id:String, node_name:String, music:String, title_key:String) ->
 	map_root.set("map_id",map_id)
 	map_root.set("music",music)
 	map_root.set("title_key",title_key)
+	claimed.clear()
 	tilemap = map_root.get_node("Tilemap")
 
 
@@ -101,22 +106,35 @@ func fill_grass(x0:int, y0:int, x1:int, y1:int) -> void:
 			tilemap.set_cell(L_FLOOR,Vector2i(x,y),SRC_FLOOR,pick_grass())
 
 
+## Catat petak lapisan Wall; kembalikan false (dan hitung konflik) bila petak sudah dipakai objek lain.
+func claim(layer:int, cell:Vector2i, label:String) -> bool:
+	if layer != L_WALL:
+		return true
+	if claimed.has(cell):
+		push_error("Tumpang tindih di petak %s: %s menimpa %s" % [cell,label,claimed[cell]])
+		conflicts += 1
+		return false
+	claimed[cell] = label
+	return true
+
+
 ## Salin blok atlas (hanya petak yang ada) ke peta mulai dari petak "at".
-func stamp(layer:int, source_id:int, atlas_origin:Vector2i, size:Vector2i, at:Vector2i) -> void:
+func stamp(layer:int, source_id:int, atlas_origin:Vector2i, size:Vector2i, at:Vector2i, label := "blok") -> void:
 	var source:TileSetAtlasSource = tileset.get_source(source_id)
 	for dx in size.x:
 		for dy in size.y:
 			var atlas := atlas_origin+Vector2i(dx,dy)
-			if source.has_tile(atlas):
+			if source.has_tile(atlas) and claim(layer,at+Vector2i(dx,dy),"%s@%s" % [label,at]):
 				tilemap.set_cell(layer,at+Vector2i(dx,dy),source_id,atlas)
 
 
 func tree(x:int, y:int) -> void:
-	stamp(L_WALL,SRC_VILLAGE,Vector2i(0,6),Vector2i(4,3),Vector2i(x,y))
+	stamp(L_WALL,SRC_VILLAGE,Vector2i(0,6),Vector2i(4,3),Vector2i(x,y),"pohon")
 
 
 func scene_tile(scene_id:int, tx:int, ty:int) -> void:
-	tilemap.set_cell(L_WALL,Vector2i(tx,ty),SRC_SCENES,Vector2i.ZERO,scene_id)
+	if claim(L_WALL,Vector2i(tx,ty),"benda%d" % scene_id):
+		tilemap.set_cell(L_WALL,Vector2i(tx,ty),SRC_SCENES,Vector2i.ZERO,scene_id)
 
 
 func add_wall_rect(rect_name:String, tile_rect:Rect2i) -> void:
@@ -184,31 +202,30 @@ func build_outdoor() -> void:
 	fill_grass(-10,-6,31,6)
 	# jalan tanah: dari pintu rumah turun lalu ke timur melewati ruang kedua
 	var path_cells:Array[Vector2i] = []
-	for y in range(0,3):
+	for y in range(0,2):
 		path_cells.append(Vector2i(-1,y))
 		path_cells.append(Vector2i(0,y))
 	for x in range(-1,31):
+		path_cells.append(Vector2i(x,1))
 		path_cells.append(Vector2i(x,2))
-		path_cells.append(Vector2i(x,3))
 	tilemap.set_cells_terrain_connect(L_FLOOR,path_cells,0,1)
 	# rumah Hokage (blok rumah atap miring dari tileset desa)
-	stamp(L_WALL,SRC_VILLAGE,Vector2i(12,6),Vector2i(4,5),Vector2i(-2,-5))
+	stamp(L_WALL,SRC_VILLAGE,Vector2i(12,6),Vector2i(4,5),Vector2i(-2,-5),"rumah")
 	# pepohonan di tepi
-	for x in [-9,-6,3,6,9]:
+	# Blok pohon berlebar 4 petak: jarak antar-pohon >= 4, tidak melintasi batas ruang kamera (x 10|11)
+	# dan tidak keluar dari layar (pohon utuh).
+	for x in [-9,2,6,11,15,19,23,27]:
 		tree(x,-5)
-	for x in [14,18,22,26,29]:
-		tree(x,-5)
-	for x in [-9,-6,-3,3,6,9,12,15,18,21,24,27]:
-		tree(x,4)
+	for x in [-9,-5,-1,3,7,11,15,19,23,27]:
+		tree(x,3)
 	tree(-9,-1)
-	tree(30,-2)
 	# benda yang bisa dihancurkan di halaman
-	scene_tile(SCENE_POT,3,-3)
-	scene_tile(SCENE_POT,4,-3)
+	scene_tile(SCENE_POT,3,-2)
+	scene_tile(SCENE_POT,4,-2)
 	scene_tile(SCENE_CRATE,7,-2)
 	scene_tile(SCENE_GRASS,-5,1)
 	scene_tile(SCENE_GRASS,-4,1)
-	scene_tile(SCENE_GRASS,8,1)
+	scene_tile(SCENE_GRASS,8,0)
 	# batas tak terlihat agar pemain tidak keluar peta
 	add_wall_rect("BatasAtas",Rect2i(-11,-7,44,2))
 	add_wall_rect("BatasBawah",Rect2i(-11,6,44,2))
@@ -234,7 +251,7 @@ func build_outdoor() -> void:
 	add_instance("res://content/enemies/samurai_latihan/samurai_latihan.tscn","SamuraiLatihan1",25,0)
 	add_instance("res://content/enemies/samurai_latihan/samurai_latihan.tscn","SamuraiLatihan2",27,-2)
 	scene_tile(SCENE_POT,13,0)
-	scene_tile(SCENE_CRATE,22,-3)
+	scene_tile(SCENE_CRATE,22,-2)
 	save_map("map_desa_uji.tscn")
 
 

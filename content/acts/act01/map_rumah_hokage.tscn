@@ -31,13 +31,13 @@ size = Vector2(192, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kaamj"]
 size = Vector2(32, 16)
 
-[node name="MapRumahHokage" type="Node2D" unique_id=1420934596]
+[node name="MapRumahHokage" type="Node2D" unique_id=289790132]
 script = ExtResource("1_6uhel")
 map_id = "rumah_hokage"
 music = "sunny"
 title_key = "MAP_RUMAH_HOKAGE"
 
-[node name="ScreenGridRef" type="TextureRect" parent="." unique_id=617712242]
+[node name="ScreenGridRef" type="TextureRect" parent="." unique_id=531643765]
 auto_translate_mode = 1
 modulate = Color(1, 1, 1, 0.0745098)
 z_index = 3
@@ -50,7 +50,7 @@ mouse_filter = 2
 texture = ExtResource("2_lptue")
 stretch_mode = 1
 
-[node name="Tilemap" type="TileMap" parent="." unique_id=1156049328]
+[node name="Tilemap" type="TileMap" parent="." unique_id=1239878736]
 y_sort_enabled = true
 position = Vector2(8, 8)
 tile_set = ExtResource("3_f1bv7")
@@ -72,72 +72,72 @@ layer_3/z_index = -2
 layer_3/navigation_enabled = false
 layer_3/tile_data = PackedInt32Array(-131077, 65538, 1, -65541, 65538, 1, -5, 65538, 1, 65531, 65538, 1, 131067, 65538, 1, 196603, 65538, 1, -131076, 65538, 1, -65540, 65538, 1, -4, 65538, 1, 65532, 65538, 1, 131068, 65538, 1, 196604, 65538, 1, -131075, 65538, 1, -65539, 65538, 1, -3, 65538, 1, 65533, 65538, 1, 131069, 65538, 1, 196605, 65538, 1, -131074, 65538, 1, -65538, 65538, 1, -2, 65538, 1, 65534, 65538, 1, 131070, 65538, 1, 196606, 65538, 1, -131073, 65538, 1, -65537, 65538, 1, -1, 65538, 1, 65535, 65538, 1, 131071, 65538, 1, 196607, 65538, 1, -196608, 65538, 1, -131072, 65538, 1, -65536, 65538, 1, 0, 65538, 1, 65536, 65538, 1, 131072, 65538, 1, -196607, 65538, 1, -131071, 65538, 1, -65535, 65538, 1, 1, 65538, 1, 65537, 65538, 1, 131073, 65538, 1, -196606, 65538, 1, -131070, 65538, 1, -65534, 65538, 1, 2, 65538, 1, 65538, 65538, 1, 131074, 65538, 1, -196605, 65538, 1, -131069, 65538, 1, -65533, 65538, 1, 3, 65538, 1, 65539, 65538, 1, 131075, 65538, 1, -196604, 65538, 1, -131068, 65538, 1, -65532, 65538, 1, 4, 65538, 1, 65540, 65538, 1, 131076, 65538, 1)
 
-[node name="DindingAtas" type="StaticBody2D" parent="Tilemap" unique_id=1671258799]
+[node name="DindingAtas" type="StaticBody2D" parent="Tilemap" unique_id=14627328]
 position = Vector2(0, -64)
 collision_mask = 0
 
-[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingAtas" unique_id=1692307086]
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingAtas" unique_id=1599462622]
 shape = SubResource("RectangleShape2D_d6l63")
 
-[node name="DindingKiri" type="StaticBody2D" parent="Tilemap" unique_id=1489401290]
+[node name="DindingKiri" type="StaticBody2D" parent="Tilemap" unique_id=800475359]
 position = Vector2(-96, 0)
 collision_mask = 0
 
-[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingKiri" unique_id=1581828860]
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingKiri" unique_id=188495308]
 shape = SubResource("RectangleShape2D_dslkv")
 
-[node name="DindingKanan" type="StaticBody2D" parent="Tilemap" unique_id=906308412]
+[node name="DindingKanan" type="StaticBody2D" parent="Tilemap" unique_id=510472020]
 position = Vector2(96, 0)
 collision_mask = 0
 
-[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingKanan" unique_id=991099034]
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingKanan" unique_id=1825685978]
 shape = SubResource("RectangleShape2D_adnas")
 
-[node name="DindingBawahKiri" type="StaticBody2D" parent="Tilemap" unique_id=305375614]
+[node name="DindingBawahKiri" type="StaticBody2D" parent="Tilemap" unique_id=445412986]
 position = Vector2(-48, 56)
 collision_mask = 0
 
-[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingBawahKiri" unique_id=1054014696]
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingBawahKiri" unique_id=1722168481]
 shape = SubResource("RectangleShape2D_ojcis")
 
-[node name="DindingBawahKanan" type="StaticBody2D" parent="Tilemap" unique_id=908832218]
+[node name="DindingBawahKanan" type="StaticBody2D" parent="Tilemap" unique_id=212086614]
 position = Vector2(56, 56)
 collision_mask = 0
 
-[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingBawahKanan" unique_id=143396832]
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/DindingBawahKanan" unique_id=106809577]
 shape = SubResource("RectangleShape2D_hg1rj")
 
-[node name="BatasBawah" type="StaticBody2D" parent="Tilemap" unique_id=816343515]
+[node name="BatasBawah" type="StaticBody2D" parent="Tilemap" unique_id=1953769222]
 position = Vector2(0, 88)
 collision_mask = 0
 
-[node name="Shape" type="CollisionShape2D" parent="Tilemap/BatasBawah" unique_id=737391027]
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/BatasBawah" unique_id=621097691]
 shape = SubResource("RectangleShape2D_ryy58")
 
-[node name="Spawn_door" type="Marker2D" parent="Tilemap" unique_id=1102712352]
+[node name="Spawn_door" type="Marker2D" parent="Tilemap" unique_id=1661020749]
 position = Vector2(0, 40)
 script = ExtResource("4_ka0ua")
 spawn_id = "door"
 
-[node name="Spawn_bed" type="Marker2D" parent="Tilemap" unique_id=232673660]
+[node name="Spawn_bed" type="Marker2D" parent="Tilemap" unique_id=1778428619]
 position = Vector2(-40, 8)
 script = ExtResource("4_ka0ua")
 spawn_id = "bed"
 
-[node name="Spawn_default" type="Marker2D" parent="Tilemap" unique_id=590967832]
+[node name="Spawn_default" type="Marker2D" parent="Tilemap" unique_id=1199128594]
 position = Vector2(0, 40)
 script = ExtResource("4_ka0ua")
 
-[node name="PintuKeluar" type="Area2D" parent="Tilemap" unique_id=989213596]
+[node name="PintuKeluar" type="Area2D" parent="Tilemap" unique_id=917895610]
 position = Vector2(0, 72)
 script = ExtResource("5_ybhwf")
 target_map = "desa_uji"
 target_spawn = "hokage_door"
 
-[node name="Shape" type="CollisionShape2D" parent="Tilemap/PintuKeluar" unique_id=510850144]
+[node name="Shape" type="CollisionShape2D" parent="Tilemap/PintuKeluar" unique_id=1359489186]
 shape = SubResource("RectangleShape2D_kaamj")
 
-[node name="DokterZahra" type="CharacterBody2D" parent="Tilemap" unique_id=937396255 instance=ExtResource("6_athe0")]
+[node name="DokterZahra" type="CharacterBody2D" parent="Tilemap" unique_id=1738298581 instance=ExtResource("6_athe0")]
 position = Vector2(40, -24)
 collision_layer = 2
 collision_mask = 3
@@ -147,7 +147,7 @@ npc_id = "dokter_zahra"
 dialog_id = "zahra_sembuhkan"
 team = ExtResource("8_3hxwq")
 
-[node name="EnvironmentArea" type="Area2D" parent="." unique_id=2067104689]
+[node name="EnvironmentArea" type="Area2D" parent="." unique_id=952003817]
 unique_name_in_owner = true
 visible = false
 collision_layer = 0
@@ -156,7 +156,7 @@ monitorable = false
 script = ExtResource("9_y4lhj")
 metadata/_edit_lock_ = true
 
-[node name="Latar" type="ColorRect" parent="." unique_id=1139592117]
+[node name="Latar" type="ColorRect" parent="." unique_id=1927296776]
 z_index = -20
 offset_left = -300.0
 offset_top = -200.0

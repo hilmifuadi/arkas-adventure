@@ -432,6 +432,8 @@ Catatan: judul dan urutan Act tidak diubah dari brief.
 4. Aset karakter dari **skrip piksel**, bukan gambar AI. → bagian 4.
 5. Rilis **bertahap parsial**. → bagian 5.1.
 6. Judul: **"Petualangan Arka di Kampung Ninja"**.
+7. Tampilan: Dokter Zahra berhijab; Bida, Nadiya, Farah berhijab atau bertudung ninja (bagian 3.1, story bible).
+8. Keluarga: Arka, Bida, Nadiya, Farah **anak kandung** Pak Hilmi dan Dokter Zahra (saudara dan rekan tim; perubahan dari brief "tiga teman"), memanggil mereka "Ayah" dan "Mamah".
 
 **Asumsi bawaan yang masih berlaku (ubah jika berbeda)**
 - Partner AI + perintah sederhana, pindah karakter hanya di momen tertentu.

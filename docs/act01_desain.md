@@ -61,7 +61,9 @@ Desa Daun di pagi cerah (musik hangat), dibagi menjadi **6 ruang layar** (sistem
 | Pembicara | ID | EN |
 |---|---|---|
 | Pak Hilmi | Kumpulkan tiga gulungan latihan. Kerja sama itu penting, Arka. | Collect three training scrolls. Teamwork matters, Arka. |
-| Arka | Siap, Ayah! Kami akan bekerja sama. | Yes, Dad! We'll work together. |
+| Pak Hilmi | Dan tidak ada jalur khusus untuk anak Hokage. Ayah menilai kalian semua sama. | And no special lane for the Hokage's kids. I grade you all the same. |
+| Arka | Siap, Ayah! ...Walaupun sedikit pilih kasih juga boleh. | Yes, Dad! ...Though a little favoritism wouldn't hurt. |
+| Pak Hilmi | Tidak. | No. |
 | Nadiya | Target terkunci. Jangan ada yang lewat di garis tembakku! | Target locked. Nobody cross my line of fire! |
 | Nadiya | ...Itu cuma papan petunjuk? | ...That was just a signboard? |
 | Farah | Secara teori, alat pelacak ini aman! | In theory, this tracker is safe! |
@@ -154,6 +156,7 @@ Setelah menemukan jeruji, Ibu Sari datang membawa kabar: **sumur desa mengeluark
 - Musik: R1-R3 `33 - Calm Village` / `31 - Sunny`; pengejaran `35 - Adventure`; boss ringan `34 - Fight` (volume rendah); gudang `28 - Tension` (ringan) lalu kembali tenang.
 - Cuaca/lingkungan: cerah, daun berguguran ringan di R5.
 - Dokter Zahra di R2 menyembuhkan seluruh tim setiap diajak bicara (sesuai brief). Keempat tokoh utama menyapanya "Mamah" (EN sementara: "Mom"), mis. Arka: "Terima kasih, Mamah!"
+- **Keluarga:** Arka, Bida, Nadiya, Farah adalah anak kandung Pak Hilmi dan Dokter Zahra, jadi bersaudara dan rekan tim (keputusan pengguna; usia/urutan lahir belum ditentukan). Dialog antar-saudara akrab, boleh memanggil nama; Pak Hilmi tidak memberi keistimewaan pada anaknya.
 - **Panggilan:** Arka, Bida, Nadiya, Farah memanggil Pak Hilmi "Ayah" dan Dokter Zahra "Mamah" (EN sementara "Dad"/"Mom"). Warga lain dan narasi tetap "Hokage Pak Hilmi" dan "Dokter Zahra"; nama pembicara di kotak dialog tidak berubah.
 - Mode Santai: ayam lebih lambat, boss 2 pukulan.
 - **Tutorial bertahap:** gerak (R1) → interaksi dan dialog (R3) → serang (pos 2) → bidik Nadiya (target) → perintah partner (pengejaran) → dash (celah pasar) → boss.
