@@ -14,7 +14,6 @@ var map:Map
 @onready var fog: TextureRect = %Fog
 
 @onready var transition: ColorRect = %Transition
-@onready var music: AudioStreamPlayer = %Music
 @onready var color_correction: ColorRect = %ColorCorrection
 @onready var camera_grid: CameraGrid = %CameraGrid
 @onready var pivot: Node2D = %Pivot
@@ -52,9 +51,9 @@ func apply_environment(resource_environment:ResourceEnvironment):
 	raylight.emitting = ResourceEnvironment.Meteo.RAY in resource_environment.meteo_list
 	# MUSIC
 	if resource_environment.music:
-		music.change_music(resource_environment.music)
+		Audio.play_music_stream(resource_environment.music)
 	else:
-		music.stop_music()
+		Audio.stop_music()
 	
 	# GRADIENT
 	color_correction.gradient = resource_environment.color_gradient

@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bs4uxpqfesgko" path="res://system/environment/fx/rain.png" id="8_5w8v0"]
 [ext_resource type="Texture2D" uid="uid://b6qbpkjaljvvr" path="res://system/environment/fx/snow.png" id="8_a6yej"]
 [ext_resource type="Texture2D" uid="uid://d0kl1xfdvdsjg" path="res://system/environment/fx/rain_on_floor.png" id="8_necrh"]
-[ext_resource type="Script" path="res://system/music.gd" id="10_4llys"]
 [ext_resource type="Texture2D" uid="uid://c8h0vkd6dugv" path="res://system/environment/fx/cloud.png" id="10_qyq2n"]
 [ext_resource type="Texture2D" uid="uid://dd2kmn7tta5gu" path="res://system/environment/fx/leaf.png" id="11_36wdo"]
 [ext_resource type="Script" path="res://system/environment/fog.gd" id="11_w52t8"]
@@ -250,12 +249,6 @@ process_material = SubResource("ParticleProcessMaterial_v4lnj")
 texture = ExtResource("15_uyose")
 lifetime = 5.0
 speed_scale = 0.5
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-autoplay = true
-bus = &"Music"
-script = ExtResource("10_4llys")
 
 [node name="Hud" type="CanvasLayer" parent="."]
 scale = Vector2(4, 4)

@@ -56,3 +56,17 @@ Scene tokoh ada di `content/characters/<nama>/<nama>.tscn`.
 | `assets/ui/emotes/*.png` | `Ui/Emote/emote{4,9,11,13,14,15,17,19,20,21,22,23,27}.png` (nama: angry, proud, happy, sad, sweat, dizzy, worried, smile, think, exclaim, surprise, question, love) |
 | `audio/voice/voice{1,2,3,5,6,7,8,9}.wav` | `Audio/Sounds/Voice/Voice*.wav` (bunyi ketik; nada diubah per tokoh lewat `pitch` di `content/characters/speakers.json`) |
 | `assets/characters/ibu_sari/*` | `Actor/Character/Villager4/SpriteSheet.png`, `Faceset.png` (dipakai langsung, tanpa recolor) |
+
+## Audio (butir Audio)
+
+| File di repo | Sumber di pack (`Audio/`) |
+|---|---|
+| `audio/music/calm_village.ogg`, `sunny.ogg`, `intro.ogg` | `Musics/33 - Calm Village.ogg`, `31 - Sunny.ogg`, `38 - Intro.ogg` |
+| `audio/sfx/slash.wav`, `dash.wav` | `Sounds/Whoosh & Slash/Slash.wav`, `Whoosh.wav` |
+| `audio/sfx/hurt.wav`, `enemy_hit.wav` | `Sounds/Hit & Impact/Hit2.wav`, `Hit1.wav` |
+| `audio/sfx/puff.wav`, `heal.wav` | `Sounds/Magic & Skill/Fx.wav`, `Heal.wav` |
+| `audio/sfx/chest.wav`, `coin.wav` | `Sounds/Bonus/Bonus.wav`, `Coin.wav` |
+| `audio/sfx/menu_move.wav`, `menu_accept.wav`, `menu_cancel.wav` | `Sounds/Menu/Move1.wav`, `Accept.wav`, `Cancel.wav` |
+| `audio/sfx/faint.wav`, `success.wav` | `Jingles/Secret1.wav`, `Success1.wav` |
+
+Pilihan SFX/musik berdasarkan judul berkas; **belum didengarkan** (uji telinga di Fase 8).
