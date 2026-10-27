@@ -1,0 +1,44 @@
+{
+	"arka": {
+		"name": "CHAR_ARKA",
+		"faceset": "res://assets/generated/characters/arka/Faceset.png",
+		"voice": "voice3",
+		"pitch": 1.1
+	},
+	"bida": {
+		"name": "CHAR_BIDA",
+		"faceset": "res://assets/generated/characters/bida/Faceset.png",
+		"voice": "voice5",
+		"pitch": 1.0
+	},
+	"nadiya": {
+		"name": "CHAR_NADIYA",
+		"faceset": "res://assets/generated/characters/nadiya/Faceset.png",
+		"voice": "voice6",
+		"pitch": 1.2
+	},
+	"farah": {
+		"name": "CHAR_FARAH",
+		"faceset": "res://assets/generated/characters/farah/Faceset.png",
+		"voice": "voice7",
+		"pitch": 1.4
+	},
+	"pak_hilmi": {
+		"name": "CHAR_PAK_HILMI",
+		"faceset": "res://assets/generated/characters/pak_hilmi/Faceset.png",
+		"voice": "voice1",
+		"pitch": 0.7
+	},
+	"dokter_zahra": {
+		"name": "CHAR_DOKTER_ZAHRA",
+		"faceset": "res://assets/generated/characters/dokter_zahra/Faceset.png",
+		"voice": "voice8",
+		"pitch": 1.15
+	},
+	"ibu_sari": {
+		"name": "CHAR_IBU_SARI",
+		"faceset": "res://assets/characters/ibu_sari/Faceset.png",
+		"voice": "voice9",
+		"pitch": 1.0
+	}
+}

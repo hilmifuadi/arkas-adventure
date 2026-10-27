@@ -44,3 +44,8 @@ func delete_save(slot:int) -> void:
 func migrate(data:Dictionary) -> Dictionary:
 	# Versi 1 adalah format awal; belum ada yang perlu dimigrasi.
 	return data
+
+
+## Simpan otomatis di slot 1 (dipanggil saat pindah peta dan setelah dialog penting).
+func autosave() -> void:
+	pass

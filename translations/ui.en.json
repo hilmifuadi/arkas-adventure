@@ -7,5 +7,6 @@
 	"UI_BACK": "Back",
 	"UI_PAUSE": "Paused",
 	"UI_RESUME": "Resume",
-	"UI_QUIT": "Quit"
+	"UI_QUIT": "Quit",
+	"UI_SKIP": "Skip"
 }

@@ -48,3 +48,11 @@ Scene tokoh ada di `content/characters/<nama>/<nama>.tscn`.
 | `assets/items/little_chest.png` | `Items/Treasure/LittleTreasureChest.png` (32x16: tertutup, terbuka) |
 | `assets/fx/smoke.png` | `FX/Smoke/Smoke/SpriteSheet.png` (6 frame 32x32, kepulan "puff") |
 | `content/weapon/katana/*` | `Items/Weapons/Katana/Sprite.png`, `SpriteInHand.png` |
+
+## Dialog: emote, voice, penutur
+
+| File di repo | Sumber di pack |
+|---|---|
+| `assets/ui/emotes/*.png` | `Ui/Emote/emote{4,9,11,13,14,15,17,19,20,21,22,23,27}.png` (nama: angry, proud, happy, sad, sweat, dizzy, worried, smile, think, exclaim, surprise, question, love) |
+| `audio/voice/voice{1,2,3,5,6,7,8,9}.wav` | `Audio/Sounds/Voice/Voice*.wav` (bunyi ketik; nada diubah per tokoh lewat `pitch` di `content/characters/speakers.json`) |
+| `assets/characters/ibu_sari/*` | `Actor/Character/Villager4/SpriteSheet.png`, `Faceset.png` (dipakai langsung, tanpa recolor) |

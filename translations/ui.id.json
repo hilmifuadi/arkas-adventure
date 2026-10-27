@@ -7,5 +7,6 @@
 	"UI_BACK": "Kembali",
 	"UI_PAUSE": "Jeda",
 	"UI_RESUME": "Lanjut Bermain",
-	"UI_QUIT": "Keluar"
+	"UI_QUIT": "Keluar",
+	"UI_SKIP": "Lewati"
 }

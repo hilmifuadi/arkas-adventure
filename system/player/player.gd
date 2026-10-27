@@ -21,8 +21,10 @@ const PLAYER_LAYER := 5
 @export var invulnerable_time := 1.0
 @export var weapon_resource:ResourceWeapon
 
-## True saat dialog, menu, atau transisi: pemain tidak membaca input.
-var locked := false
+## True saat dialog atau transisi peta: pemain tidak membaca input.
+var locked:bool:
+	get:
+		return Dialogue.active or Scenes.busy
 var mode:Mode = Mode.NORMAL
 var facing := Vector2.DOWN
 var invulnerable := false

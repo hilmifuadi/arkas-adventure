@@ -1,6 +1,9 @@
 extends Node
 ## Pindah scene besar (Title, Game) lewat node Main, dan pindah peta di dalam World.
 
+## True saat transisi peta berlangsung (pemain tidak boleh digerakkan).
+var busy := false
+
 
 func go_to(scene_path:String) -> void:
 	var main = get_tree().get_first_node_in_group("main")

@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://system/dialogue/dialog_box.gd" id="1_box"]
+[ext_resource type="Theme" path="res://theme/theme_1/theme_1.tres" id="2_theme"]
+[ext_resource type="Texture2D" path="res://assets/ui/dialog_box_faceset.png" id="3_tex"]
+[ext_resource type="Texture2D" path="res://assets/ui/arrow.png" id="4_arrow"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_text"]
+font_size = 9
+font_color = Color(0.0784314, 0.105882, 0.105882, 1)
+
+[node name="DialogBox" type="CanvasLayer"]
+layer = 20
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+script = ExtResource("1_box")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+theme = ExtResource("2_theme")
+
+[node name="Box" type="TextureRect" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 118.0
+offset_right = 310.0
+offset_bottom = 176.0
+texture = ExtResource("3_tex")
+
+[node name="Face" type="TextureRect" parent="Root/Box"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 14.0
+offset_right = 44.0
+offset_bottom = 52.0
+texture = null
+
+[node name="Emote" type="TextureRect" parent="Root/Box"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 280.0
+offset_top = -15.0
+offset_right = 294.0
+offset_bottom = -2.0
+mouse_filter = 2
+
+[node name="NameTab" type="Control" parent="Root/Box"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 70.0
+offset_bottom = 11.0
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="Root/Box/NameTab"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 66.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="Root/Box"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 52.0
+offset_top = 15.0
+offset_right = 294.0
+offset_bottom = 53.0
+label_settings = SubResource("LabelSettings_text")
+autowrap_mode = 3
+
+[node name="Arrow" type="TextureRect" parent="Root/Box"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 282.0
+offset_top = 44.0
+offset_right = 295.0
+offset_bottom = 57.0
+mouse_filter = 2
+texture = ExtResource("4_arrow")
+
+[node name="Choices" type="VBoxContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 110.0
+offset_top = 30.0
+offset_right = 310.0
+offset_bottom = 112.0
+alignment = 2
+theme_override_constants/separation = 2
+
+[node name="SkipButton" type="Button" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 268.0
+offset_top = 4.0
+offset_right = 316.0
+offset_bottom = 22.0
+focus_mode = 0
+text = "UI_SKIP"
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"SFX"
