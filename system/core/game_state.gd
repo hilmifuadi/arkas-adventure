@@ -6,8 +6,12 @@ extends Node
 
 signal flag_changed(flag:String, value:Variant)
 signal inventory_changed(item:String, count:int)
+signal hearts_changed
 
 const SAVE_VERSION := 1
+const HEARTS_NORMAL := 5
+## Mode Santai memberi lebih banyak hati (lihat Settings.easy_mode).
+const HEARTS_EASY := 8
 
 var current_act := 1
 var current_map := ""
@@ -24,8 +28,37 @@ func reset() -> void:
 	flags = {}
 	inventory = {}
 	party = ["arka"]
-	hearts_max = 5
+	hearts_max = max_hearts_for_mode()
 	hearts = hearts_max
+	hearts_changed.emit()
+
+
+func max_hearts_for_mode() -> int:
+	return HEARTS_EASY if Settings.easy_mode else HEARTS_NORMAL
+
+
+## Dipanggil saat Mode Santai diubah: menambah/mengurangi wadah hati tanpa memulihkan paksa.
+func refresh_hearts_max() -> void:
+	var new_max := max_hearts_for_mode()
+	hearts = clampi(hearts + (new_max - hearts_max), 1, new_max)
+	hearts_max = new_max
+	hearts_changed.emit()
+
+
+func damage_hearts(amount := 1) -> void:
+	hearts = maxi(hearts - amount, 0)
+	hearts_changed.emit()
+
+
+func heal_hearts(amount := 1) -> void:
+	hearts = mini(hearts + amount, hearts_max)
+	hearts_changed.emit()
+
+
+## Dokter Zahra dan bangun dari pingsan: seluruh tim pulih penuh.
+func heal_all() -> void:
+	hearts = hearts_max
+	hearts_changed.emit()
 
 
 func set_flag(flag:String, value:Variant = true) -> void:
@@ -80,3 +113,4 @@ func from_dict(data:Dictionary) -> void:
 	party.assign(data.get("party", party))
 	hearts_max = data.get("hearts_max", hearts_max)
 	hearts = data.get("hearts", hearts_max)
+	hearts_changed.emit()

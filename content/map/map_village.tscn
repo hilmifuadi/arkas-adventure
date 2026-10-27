@@ -68,17 +68,6 @@ layer_3/tile_data = PackedInt32Array(-917533, 65537, 12, -851997, 1, 12, -786461
 [node name="Arka" parent="Tilemap" index="4" instance=ExtResource("7_n8vb2")]
 position = Vector2(56, 53)
 
-[node name="PlayerAssignor" type="Node" parent="Tilemap/Arka" index="4"]
-script = ExtResource("8_8tm86")
-
-[node name="DamageArea" type="Area2D" parent="Tilemap/Arka" index="5"]
-script = ExtResource("4_x8ws0")
-damage = SubResource("Resource_m4bmw")
-team = ExtResource("6_u73qr")
-
-[node name="DamageShape" type="CollisionShape2D" parent="Tilemap/Arka/DamageArea" index="0"]
-shape = SubResource("CircleShape2D_a20kx")
-
 [node name="Pig" parent="Tilemap" index="5" instance=ExtResource("7_cu425")]
 speed = 100
 

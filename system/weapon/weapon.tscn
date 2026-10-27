@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://system/weapon/weapon.gd" id="1_dhxh8"]
 [ext_resource type="Script" path="res://system/damage/damage_area.gd" id="3_0o8xx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8xia"]
-size = Vector2(12, 10)
+[sub_resource type="CircleShape2D" id="CircleShape2D_h8xia"]
+radius = 9.0
 
 [node name="Weapon" type="Area2D"]
 collision_layer = 0
@@ -15,10 +15,11 @@ script = ExtResource("1_dhxh8")
 rotation = -1.5708
 
 [node name="DamageArea" type="Area2D" parent="Sprite"]
+position = Vector2(0, -10)
 rotation = 1.5708
 collision_layer = 0
 monitorable = false
 script = ExtResource("3_0o8xx")
 
 [node name="Shape" type="CollisionShape2D" parent="Sprite/DamageArea"]
-shape = SubResource("RectangleShape2D_h8xia")
+shape = SubResource("CircleShape2D_h8xia")

@@ -36,6 +36,8 @@ func generate_map(map_scene:PackedScene):
 	map = starting_map.instantiate()
 	add_child(map)
 	map.environment_area.environment_changed.connect(apply_environment)
+	for player in get_tree().get_nodes_in_group("player"):
+		camera_grid.target = player
 
 
 func apply_environment(resource_environment:ResourceEnvironment):
