@@ -1,2 +1,8 @@
 # Godot 4+ specific ignores
 .godot/
+
+# Editor temp files
+*.tmp
+
+# Web export output (built locally, deployed to GitHub Pages)
+build/
