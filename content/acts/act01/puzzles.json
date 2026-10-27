@@ -1,0 +1,50 @@
+[
+	{
+		"id": "act01_peti_shuriken",
+		"act": 1,
+		"grade": 3,
+		"topic": "perkalian",
+		"text": "PUZ_ACT01_PETI_SHURIKEN_TEXT",
+		"expr": "3*12+8",
+		"answer": "44",
+		"hints": [
+			"PUZ_ACT01_PETI_SHURIKEN_HINT1",
+			"PUZ_ACT01_PETI_SHURIKEN_HINT2",
+			"PUZ_ACT01_PETI_SHURIKEN_HINT3"
+		],
+		"explanation": "PUZ_ACT01_PETI_SHURIKEN_EXPLAIN",
+		"required": true
+	},
+	{
+		"id": "act01_mangkuk_ramen",
+		"act": 1,
+		"grade": 3,
+		"topic": "pengurangan",
+		"text": "PUZ_ACT01_MANGKUK_RAMEN_TEXT",
+		"expr": "126-48",
+		"answer": "78",
+		"hints": [
+			"PUZ_ACT01_MANGKUK_RAMEN_HINT1",
+			"PUZ_ACT01_MANGKUK_RAMEN_HINT2",
+			"PUZ_ACT01_MANGKUK_RAMEN_HINT3"
+		],
+		"explanation": "PUZ_ACT01_MANGKUK_RAMEN_EXPLAIN",
+		"required": true
+	},
+	{
+		"id": "act01_onigiri_ibu_sari",
+		"act": 1,
+		"grade": 3,
+		"topic": "uang",
+		"text": "PUZ_ACT01_ONIGIRI_TEXT",
+		"expr": "20000-4*3000",
+		"answer": "8000",
+		"hints": [
+			"PUZ_ACT01_ONIGIRI_HINT1",
+			"PUZ_ACT01_ONIGIRI_HINT2",
+			"PUZ_ACT01_ONIGIRI_HINT3"
+		],
+		"explanation": "PUZ_ACT01_ONIGIRI_EXPLAIN",
+		"required": false
+	}
+]

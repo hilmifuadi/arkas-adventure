@@ -1,0 +1,17 @@
+{
+	"PUZ_ACT01_PETI_SHURIKEN_TEXT": "The equipment chest is locked. The lid says: \"Code = the total number of training shuriken.\" There are 3 boxes of shuriken, with 12 shuriken in each box. Nadiya adds 8 more shuriken. How many shuriken are there in all?",
+	"PUZ_ACT01_PETI_SHURIKEN_HINT1": "Bida: How many boxes are there, and how many are in each box?",
+	"PUZ_ACT01_PETI_SHURIKEN_HINT2": "Bida: Work out 3 × 12 first. Just scribble it on the paper.",
+	"PUZ_ACT01_PETI_SHURIKEN_HINT3": "Bida: 3 × 12 = 36. Don't forget the extra shuriken from Nadiya.",
+	"PUZ_ACT01_PETI_SHURIKEN_EXPLAIN": "3 × 12 = 36. Then 36 + 8 = 44. The code is 44!",
+	"PUZ_ACT01_MANGKUK_RAMEN_TEXT": "The warehouse stores 126 bowls of ready-to-eat ramen. After the crisis, 48 bowls turned into purple porridge. How many bowls of ramen are still good?",
+	"PUZ_ACT01_MANGKUK_RAMEN_HINT1": "Bida: The ruined bowls must be subtracted from all the bowls.",
+	"PUZ_ACT01_MANGKUK_RAMEN_HINT2": "Bida: Work out 126 − 48. Try subtracting 40 first, then 8.",
+	"PUZ_ACT01_MANGKUK_RAMEN_HINT3": "Bida: 126 − 40 = 86. Then 86 − 8 = ?",
+	"PUZ_ACT01_MANGKUK_RAMEN_EXPLAIN": "126 − 40 = 86, then 86 − 8 = 78. There are 78 bowls of ramen still good.",
+	"PUZ_ACT01_ONIGIRI_TEXT": "Ibu Sari sells onigiri for Rp 3,000 each. Arka buys 4 onigiri and pays with Rp 20,000. How much change does Arka get?",
+	"PUZ_ACT01_ONIGIRI_HINT1": "Bida: Work out the price of 4 onigiri first.",
+	"PUZ_ACT01_ONIGIRI_HINT2": "Bida: 4 × 3,000 = 12,000.",
+	"PUZ_ACT01_ONIGIRI_HINT3": "Bida: Subtract that price from the money Arka paid.",
+	"PUZ_ACT01_ONIGIRI_EXPLAIN": "4 × 3,000 = 12,000. Then 20,000 − 12,000 = 8,000. The change is Rp 8,000."
+}

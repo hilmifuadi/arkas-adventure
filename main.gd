@@ -8,6 +8,10 @@ enum StartingScene {TITLE_SCREEN,GAME}
 var current_scene:Node
 
 
+func _init() -> void:
+	add_to_group("main")
+
+
 func _ready() -> void:
 	match starting_menu:
 		StartingScene.TITLE_SCREEN:
