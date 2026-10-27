@@ -107,10 +107,14 @@ def side_sign(direction):
 
 # ---------------------------------------------------------------- fitur per tokoh
 
-def neck_cloth(cell, top, cx, color, trim, wide=5):
+def neck_cloth(cell, top, cx, color, trim, wide=5, widths=None):
     """Kain tudung/hijab yang menutup leher dan jatuh membentuk segitiga kecil di dada.
-    Dua baris pertama melebar, baris ketiga menyempit; garis tepi (trim) memberi kesan lipatan."""
-    rows = ((top + 9, wide, trim), (top + 10, wide - 1, color), (top + 11, max(wide - 3, 1), color))
+    Dua baris pertama melebar, baris ketiga menyempit; garis tepi (trim) memberi kesan lipatan.
+    widths: daftar setengah-lebar per baris (mulai top+9) untuk hijab panjang."""
+    if widths:
+        rows = [(top + 9 + i, half, trim if i == 0 else color) for i, half in enumerate(widths)]
+    else:
+        rows = ((top + 9, wide, trim), (top + 10, wide - 1, color), (top + 11, max(wide - 3, 1), color))
     for y, half, edge in rows:
         for x in range(cx - half + 1, cx + half + 1):
             if is_opaque(cell, x, y) and cell.getpixel((x, y)) != OUTLINE:
@@ -313,19 +317,26 @@ def hilmi_features(cell, d, top, cx, row):
 
 def zahra_features(cell, d, top, cx, row):
     red = rgb("e0394c")
-    # hijab biru muda yang lembut: menutup kepala dan leher, jatuh di dada, ujungnya berkibar
+    # hijab biru muda yang lembut dan panjang: menutup kepala, leher, bahu, dan dada; ujungnya berkibar
     cloth, trim, shade = rgb("b0d0e8"), rgb("cfe3f3"), rgb("86aed0")
-    neck_cloth(cell, top, cx, cloth, trim, wide=6)
+    neck_cloth(cell, top, cx, cloth, trim, widths=[7, 7, 6, 4, 2])
+    # lipatan kecil: garis bayangan menurun dari leher
+    for i in range(3):
+        for sign in (-1, 1):
+            xx = cx + sign * (2 + i) - (1 if sign < 0 else 0)
+            if is_opaque(cell, xx, top + 10 + i) and cell.getpixel((xx, top + 10 + i)) == cloth:
+                cell.putpixel((xx, top + 10 + i), shade)
     cloth_tail(cell, d, top, cx, cloth, shade)
     if d == DOWN:
-        # palang kesehatan di dada jas putih (di bawah hijab)
-        for dx in (-1, 0, 1):
-            put(cell, cx + dx, top + 13, red)
-        put(cell, cx, top + 12, red)
-        put(cell, cx, top + 14, red)
+        # palang kesehatan sebagai lencana di dada kanan (di atas kain)
+        put(cell, cx + 3, top + 11, red)
+        put(cell, cx + 2, top + 12, red)
+        put(cell, cx + 3, top + 12, red)
+        put(cell, cx + 4, top + 12, red)
+        put(cell, cx + 3, top + 13, red)
     elif d in (LEFT, RIGHT):
+        put(cell, cx, top + 12, red)
         put(cell, cx, top + 13, red)
-        put(cell, cx, top + 14, red)
 
 
 # ---------------------------------------------------------------- definisi tokoh
@@ -394,8 +405,10 @@ CHARACTERS = {
             rgb("548789"): rgb("c4ccd8"),
             rgb("f1c471"): rgb("b0d0e8"),   # rambut pirang terang -> hijab biru muda
             rgb("d78b4a"): rgb("86aed0"),   # rambut pirang gelap -> bayangan hijab
+            rgb("cf736d"): rgb("ef914f"),   # semburat pipi/telinga di kepala -> warna kulit (telinga tertutup)
         },
-        "body": {},
+        # badan: leher/kerah merah muda menjadi kain hijab, tangan tertutup lengan jas putih
+        "body": {rgb("cf736d"): rgb("b0d0e8"), rgb("ef914f"): rgb("f1f4f8")},
         "tuft": {},
         "features": zahra_features,
     },
@@ -442,6 +455,72 @@ def ring(img, cx, cy, r, color):
 def put_img(img, x, y, color):
     if 0 <= x < img.width and 0 <= y < img.height:
         img.putpixel((x, y), color)
+
+
+def face_neck_cloth(img, color, trim, shade):
+    """Kain tudung menutup leher di faceset: pita kain (tepi terang + 3 baris kain + lipatan)."""
+    for x in range(4, 35):
+        for y, tone in ((29, trim), (30, color), (31, color), (32, shade)):
+            px = img.getpixel((x, y))
+            if px != OUTLINE:
+                img.putpixel((x, y), tone)
+    for x in range(10, 29, 4):  # lipatan kecil
+        if img.getpixel((x, 31)) != OUTLINE:
+            img.putpixel((x, 31), shade)
+
+
+def zahra_hijab_face(img):
+    """Dokter Zahra: hijab sangat tertutup ala hijab muslimah. Seluruh rambut, dahi atas, sisi wajah,
+    telinga, dan leher tertutup kain; kain jatuh menutup bahu dan dada. Hanya wajah (mata, hidung, mulut)
+    yang terlihat, dibingkai garis tepi kain gelap + tepi terang. Piksel wajah diambil dari sprite pack."""
+    orig = img.copy()
+    cloth, shade, light, trim = rgb("b0d0e8"), rgb("86aed0"), rgb("f1f4f8"), rgb("cfe3f3")
+    coat, red = rgb("c4ccd8"), rgb("e0394c")
+    cx, cy, rx, ry = 17.3, 21.2, 8.0, 5.8  # lubang wajah
+
+    def silhouette(x, y):
+        dome = ((x - 17.5) / 11.8) ** 2 + ((y - 15.5) / 12.8) ** 2 <= 1.0
+        drape = y >= 25 and abs(x - 17.5) <= 9.5 + 9.5 * (((y - 25) / 12.0) ** 0.6)
+        return dome or drape
+
+    for y in range(img.height):
+        for x in range(img.width):
+            img.putpixel((x, y), OUTLINE)
+    for y in range(img.height):
+        for x in range(img.width):
+            if not silhouette(x, y):
+                continue
+            tone = cloth
+            lean = (x - 17.5) * 0.9 + (y - 15.5) * 0.3
+            if lean > 8.0:
+                tone = shade  # sisi kanan lebih gelap
+            elif (x - 17.5) * 0.9 + (y - 15.5) * 0.6 < -9.0:
+                tone = light  # kilau kiri atas
+            if y >= 28:  # lipatan berbentuk V dari leher, dan lipatan tengah
+                fold = abs(abs(x - 17.5) - ((y - 27) * 0.9 + 3.0))
+                if fold < 0.65:
+                    tone = shade
+                elif y >= 31 and abs(x - 17.5) < 0.6:
+                    tone = trim
+            img.putpixel((x, y), tone)
+    for y in range(img.height):
+        for x in range(img.width):
+            e = ((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2
+            if e <= 1.0:
+                pixel = orig.getpixel((x, y))
+                if pixel == rgb("cf736d") and (x > 22 or x < 12):
+                    pixel = rgb("ef914f")  # semburat telinga di tepi wajah diganti warna kulit (telinga tertutup)
+                img.putpixel((x, y), pixel)
+            elif e <= 1.2:
+                img.putpixel((x, y), OUTLINE)  # garis tepi kain di sekeliling wajah
+            elif e <= 1.5 and silhouette(x, y):
+                img.putpixel((x, y), trim)  # tepi kain terang
+    # jas putih di sudut bawah dan palang merah sebagai lencana di dada kanan
+    for y in range(33, 38):
+        for x in list(range(0, 3)) + list(range(35, 38)):
+            img.putpixel((x, y), coat)
+    for pt in ((28, 31), (27, 32), (28, 32), (29, 32), (28, 33)):
+        img.putpixel(pt, red)
 
 
 def face_overlay(name, img):
@@ -498,12 +577,13 @@ def face_overlay(name, img):
         fill(img, 17, 5, 20, 8, rgb("f5c542"))
         fill(img, 18, 6, 19, 7, rgb("d6283c"))
     elif name == "dokter_zahra":
-        # hijab menutup leher dan jatuh di dada; palang merah di jas putih
-        fill(img, 9, 29, 29, 33, rgb("b0d0e8"))
-        fill(img, 9, 29, 29, 29, rgb("cfe3f3"))
-        fill(img, 14, 34, 24, 37, rgb("b0d0e8"))
-        fill(img, 18, 35, 19, 37, rgb("e0394c"))
-        fill(img, 17, 36, 20, 36, rgb("e0394c"))
+        zahra_hijab_face(img)
+    if name == "bida":
+        face_neck_cloth(img, rgb("2f4ea0"), rgb("4a6cc0"), rgb("23366e"))
+    elif name == "nadiya":
+        face_neck_cloth(img, rgb("e8364c"), rgb("f0566a"), rgb("a62e48"))
+    elif name == "farah":
+        face_neck_cloth(img, rgb("ffd84a"), rgb("fff1a0"), rgb("f2a62a"))
 
 
 # ---------------------------------------------------------------- penyusunan

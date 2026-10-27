@@ -32,7 +32,7 @@ Dibuat ulang secara deterministik (recolor palet + aksesori piksel); jangan died
 | Nadiya | `Actor/Character/NinjaRed2` | merah, tudung ninja dengan pita kuning di sisi, bandolir shuriken |
 | Farah | `Actor/Character/NinjaYellow` | kuning, tudung ninja, goggle di dahi di atas tudung, ransel dengan antena |
 | Pak Hilmi | `Actor/Character/OldMan2` | topi Hokage berlambang emas, rambut putih |
-| Dokter Zahra | `Actor/Character/Woman` | hijab biru muda (rambut pirang diganti kain), jas putih dengan palang merah |
+| Dokter Zahra | `Actor/Character/Woman` | hijab sangat tertutup biru muda (rambut, telinga, leher, bahu, dan dada tertutup kain; hanya wajah terlihat), jas putih, lencana palang merah |
 
 Pack sumber: `Ninja Adventure - Asset Pack/Actor/Character/` (folder pack ada di luar repo).
 Skrip mencari pack otomatis di folder induk repo, atau pakai `--pack "<folder>"`.

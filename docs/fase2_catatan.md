@@ -192,8 +192,8 @@ kesulitan perlu dicoba langsung oleh pengguna.
 
 ## Pembaruan: hubungan keluarga = anak kandung (keputusan pengguna)
 
-- Pengguna memutuskan **anak kandung**. Tafsir yang dipakai (bisa dikoreksi): **Arka, Bida, Nadiya, Farah adalah anak kandung Pak Hilmi
-  dan Dokter Zahra, jadi bersaudara dan rekan tim**; usia/urutan lahir belum ditentukan. Ini **perubahan dari brief** (brief menyebut
+- Pengguna memutuskan **anak kandung** dan **mengonfirmasi keempatnya** (Arka, Bida, Nadiya, Farah) adalah anak kandung Pak Hilmi
+  dan Dokter Zahra, jadi bersaudara dan rekan tim (keputusan final); hanya usia/urutan lahir yang belum ditentukan [USULAN]. Ini **perubahan dari brief** (brief menyebut
   "tiga teman perempuan"). Dicatat di `docs/story_bible.md` 2.1 dan 3.2 (tiga opsi [USULAN] lama diganti keputusan + dampak:
   Arka bercita-cita seperti ayahnya, Pak Hilmi tidak memberi keistimewaan, tim = keluarga, Kuro melihat Arka sebagai "anak sang guru"
   di Act 8 tanpa mengubah motivasinya), `docs/act01_desain.md` (S2 dan catatan 12.3), `docs/RENCANA_PENGERJAAN.md` (keputusan 7-8), `README.md`.
@@ -224,3 +224,17 @@ kesulitan perlu dicoba langsung oleh pengguna.
   (`claim`) dan gagal (exit 1) bila ada objek menimpa objek lain**, sehingga masalah ini tidak terulang. Peta di-build ulang: 0 tumpang tindih.
 - Screenshot sebelum/sesudah: `17_pot_pohon_LAMA_sebelum/sesudah.png` dan `18_pot_pohon_BARU_sebelum/sesudah.png`
   (dibuat `tools/shots_destroy.gd`). Peta sample bawaan `map_village.tscn` tidak dipakai lagi dan tidak diubah.
+
+## Pembaruan: hijab Dokter Zahra sangat tertutup
+
+- **Faceset Dokter Zahra digambar ulang** (`zahra_hijab_face()` di `tools/gen_characters.py`): hijab ala muslimah yang menutup seluruh
+  rambut, dahi atas, sisi wajah, telinga, dan leher; kain jatuh panjang menutup bahu dan dada dengan lipatan V, lipatan tengah, kilau
+  kiri atas dan bayangan kanan. Hanya wajah (mata, hidung, mulut) yang terlihat, dibingkai garis tepi kain gelap + tepi terang.
+  Jas putih terlihat di sudut bawah dan palang merah menjadi lencana di dada. Sebelumnya rambut dan leher masih terlihat di faceset.
+- **Sprite Dokter Zahra**: hijab panjang menutup bahu dan dada di 4 arah (`neck_cloth(widths=...)`, lipatan, ujung kain berkibar);
+  dari belakang kepala tertutup penuh kain; tangan di badan memakai lengan jas putih, semburat telinga/leher diganti kain atau kulit.
+- **Bida, Nadiya, Farah**: diperiksa; sprite sudah menutup kepala dan leher penuh (tidak ada rambut/leher terlihat), faceset kini diberi
+  pita kain leher (`face_neck_cloth()`) dengan tepi terang dan lipatan. Ciri khas dipertahankan (kacamata bulat Bida, bandolir + pita kuning
+  Nadiya, goggle di atas tudung Farah).
+- Screenshot: `docs/fase2_screenshots/23_faceset_zahra_SEBELUM.png` dan `24_faceset_zahra_SESUDAH.png` (zoom 10x),
+  `25_faceset_perempuan_zoom.png` (Zahra, Bida, Nadiya, Farah), `16_sprite_tokoh.png` (semua sprite), dan `11_dokter_zahra.png` (dialog).
