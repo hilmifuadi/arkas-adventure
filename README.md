@@ -1,15 +1,60 @@
-# Kampung Ninja
+# Petualangan Arka di Kampung Ninja
 
-A top-down 2D game made with Godot 4, based on the
-[Ninja Adventure](https://github.com/pixel-boy/NinjaAdventure) sample project and asset pack by Pixel-boy.
+*Arka's Adventure in Ninja Village*
 
-The goal is a web build hosted on GitHub Pages.
+Game petualangan top-down 2D untuk keluarga, dibuat dengan Godot 4 (GDScript).
+Arka dan teman-temannya (Bida, Nadiya, Farah) menyelamatkan **Desa Daun** dari krisis yang
+awalnya konyol, lalu perlahan membuka misteri besar. Di sepanjang jalan ada puzzle cerita
+matematika untuk kelas 3-5 SD, lengkap dengan kertas coretan.
 
-## Running locally
+Game tersedia dalam **Bahasa Indonesia** dan **English** (pilih di layar judul).
 
-1. Install [Godot 4.7](https://godotengine.org/download) (the standard build is enough, the project is GDScript only).
-2. Open `project.godot` in Godot and press F5.
+> Status: dalam pengembangan. Dibangun bertahap per episode (lihat `docs/`).
+> Versi web (GitHub Pages) baru disiapkan ketika sebuah episode siap rilis.
 
-## Controls
+## Menjalankan
 
-- Move: arrow keys, gamepad d-pad or left stick
+1. Pasang [Godot 4.7](https://godotengine.org/download). Proyek hanya memakai GDScript, jadi build standar cukup.
+2. Buka `project.godot` di Godot lalu tekan F5.
+
+Proyek memakai renderer **Compatibility** agar tampilan di desktop dan web sama.
+
+## Kontrol
+
+| Aksi | Keyboard | Gamepad |
+|---|---|---|
+| Bergerak | Panah atau WASD | D-pad / stik kiri |
+| Serang | Z atau Spasi | A |
+| Dash | X atau Shift | B |
+| Interaksi / bicara | E atau Enter | Y |
+| Kemampuan Bida (Analisis) | 1 | X |
+| Kemampuan Nadiya (Bidik) | 2 | RB |
+| Kemampuan Farah (Gadget) | 3 | LB |
+| Kertas coretan | Tab | Back |
+| Jeda | Esc | Start |
+
+Kertas coretan memakai mouse. Kontrol sentuh untuk HP/tablet ditambahkan menjelang rilis.
+
+## Struktur proyek
+
+```
+assets/      aset terpilih dari pack + hasil generate (lihat assets/SOURCES.md)
+content/     konten game: menu, karakter, musuh, boss, peta per Act, puzzle
+system/      mesin game (karakter, senjata, damage, peta, UI) dan sistem inti (system/core)
+translations/ teks game dua bahasa (ui.id.json / ui.en.json)
+tools/       linter konsistensi brief, validator data, smoke test
+docs/        Story Bible dan desain per Act
+```
+
+## Pemeriksaan kualitas
+
+```
+python tools/check_all.py                                  # linter brief + validator data
+godot --headless --path . --script tools/smoke_test.gd     # memuat semua scene dan resource
+```
+
+## Kredit
+
+Proyek ini berawal dari [sample Ninja Adventure](https://github.com/pixel-boy/NinjaAdventure)
+dan memakai [Ninja Adventure Asset Pack](https://pixel-boy.itch.io/ninja-adventure-asset-pack)
+oleh **Pixel-boy** dan **AAA** (lisensi CC0). Lihat `assets/SOURCES.md`.

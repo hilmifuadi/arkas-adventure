@@ -1,0 +1,17 @@
+{
+	"PUZ_ACT01_PETI_SHURIKEN_TEXT": "Peti perlengkapan terkunci. Di tutupnya tertulis: \"Kode = jumlah semua shuriken latihan.\" Ada 3 kotak shuriken, tiap kotak berisi 12 shuriken. Nadiya menambahkan 8 shuriken lagi. Berapa jumlah semua shuriken?",
+	"PUZ_ACT01_PETI_SHURIKEN_HINT1": "Bida: Ada berapa kotak, dan isi tiap kotak berapa?",
+	"PUZ_ACT01_PETI_SHURIKEN_HINT2": "Bida: Hitung 3 × 12 dulu. Coret-coret saja di kertas.",
+	"PUZ_ACT01_PETI_SHURIKEN_HINT3": "Bida: 3 × 12 = 36. Jangan lupa shuriken tambahan dari Nadiya.",
+	"PUZ_ACT01_PETI_SHURIKEN_EXPLAIN": "3 × 12 = 36. Lalu 36 + 8 = 44. Kodenya 44!",
+	"PUZ_ACT01_MANGKUK_RAMEN_TEXT": "Gudang menyimpan 126 mangkuk ramen siap saji. Setelah krisis, 48 mangkuk berubah jadi bubur ungu. Berapa mangkuk ramen yang masih bagus?",
+	"PUZ_ACT01_MANGKUK_RAMEN_HINT1": "Bida: Mangkuk yang rusak harus dikurangkan dari semua mangkuk.",
+	"PUZ_ACT01_MANGKUK_RAMEN_HINT2": "Bida: Hitung 126 − 48. Coba kurangi 40 dulu, lalu 8.",
+	"PUZ_ACT01_MANGKUK_RAMEN_HINT3": "Bida: 126 − 40 = 86. Lalu 86 − 8 = ?",
+	"PUZ_ACT01_MANGKUK_RAMEN_EXPLAIN": "126 − 40 = 86, lalu 86 − 8 = 78. Ada 78 mangkuk ramen yang masih bagus.",
+	"PUZ_ACT01_ONIGIRI_TEXT": "Ibu Sari menjual onigiri Rp 3.000 per buah. Arka membeli 4 onigiri dan membayar dengan uang Rp 20.000. Berapa uang kembalian Arka?",
+	"PUZ_ACT01_ONIGIRI_HINT1": "Bida: Hitung dulu harga 4 onigiri.",
+	"PUZ_ACT01_ONIGIRI_HINT2": "Bida: 4 × 3.000 = 12.000.",
+	"PUZ_ACT01_ONIGIRI_HINT3": "Bida: Kurangkan harga itu dari uang yang dibayar Arka.",
+	"PUZ_ACT01_ONIGIRI_EXPLAIN": "4 × 3.000 = 12.000. Lalu 20.000 − 12.000 = 8.000. Kembaliannya Rp 8.000."
+}
